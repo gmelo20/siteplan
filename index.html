@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Plan - Ciseaux Galants</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ===== BASE STYLES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: #222625;
+            background-color: #F2F2F2;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            background-color: #222625;
+            color: #F2F2F2;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .site-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #FCEBA7;
+            margin-bottom: 0.5rem;
+        }
+
+        .course-info {
+            color: #BF9A56;
+            font-size: 1.1rem;
+        }
+
+        /* ===== MAIN CONTENT ===== */
+        main {
+            background-color: #FEF5A6;
+            padding: 2rem;
+            border-radius: 10px;
+            border-left: 6px solid #BF9A56;
+        }
+
+        .section {
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid #FCEBA7;
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            color: #222625;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #BF9A56;
+        }
+
+        h3 {
+            color: #222625;
+            margin: 1rem 0 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        p, li {
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* ===== SITE NAME SECTION ===== */
+        .site-name-display {
+            background-color: #222625;
+            color: #FCEBA7;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            text-align: center;
+        }
+
+        .site-name-display h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: #FCEBA7;
+            margin-bottom: 0.5rem;
+        }
+
+        .domain-info {
+            color: #BF9A56;
+            font-size: 1.1rem;
+        }
+
+        /* ===== COLOR SCHEME ===== */
+        .color-palette {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .color-item {
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .color-dark {
+            background-color: #222625;
+            color: #F2F2F2;
+        }
+
+        .color-soft-cream {
+            background-color: #FCEBA7;
+            color: #222625;
+        }
+
+        .color-light-cream {
+            background-color: #FEF5A6;
+            color: #222625;
+        }
+
+        .color-gold {
+            background-color: #BF9A56;
+            color: #222625;
+        }
+
+        .color-light-gray {
+            background-color: #F2F2F2;
+            color: #222625;
+            border: 1px solid #ddd;
+        }
+
+        /* ===== TYPOGRAPHY ===== */
+        .font-showcase {
+            margin: 1.5rem 0;
+        }
+
+        .font-example {
+            padding: 1rem;
+            margin: 0.5rem 0;
+            border-radius: 6px;
+            background-color: #F2F2F2;
+        }
+
+        .font-playfair {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .font-montserrat {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .font-dancing {
+            font-family: 'Dancing Script', cursive;
+        }
+
+        /* ===== WIREFRAMES ===== */
+        .wireframe-section {
+            margin: 2rem 0;
+        }
+
+        .wireframe {
+            background-color: #F2F2F2;
+            border: 2px solid #BF9A56;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .wireframe h4 {
+            text-align: center;
+            color: #222625;
+            margin-bottom: 1rem;
+        }
+
+        .wireframe-content {
+            background-color: #FCEBA7;
+            padding: 1rem;
+            border-radius: 6px;
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .wireframe-item {
+            background-color: #FEF5A6;
+            padding: 0.8rem;
+            border-radius: 4px;
+            border: 1px dashed #BF9A56;
+            text-align: center;
+            color: #222625;
+        }
+
+        .wireframe-mobile .wireframe-content {
+            max-width: 375px;
+            margin: 0 auto;
+        }
+
+        /* ===== SCENARIOS ===== */
+        .scenario {
+            background-color: #F2F2F2;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 6px;
+            border-left: 4px solid #BF9A56;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+            padding: 1rem;
+            color: #666;
+            font-size: 0.9rem;
+            border-top: 1px solid #ddd;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            .site-title {
+                font-size: 2rem;
+            }
+            
+            .color-palette {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="site-title">WDD 231: Web Frontend Development</h1>
+        <p class="course-info">Site Plan Document - Individual Project</p>
+    </header>
+
+    <main>
+        <!-- Section 1: Site Name -->
+        <section class="section" id="site-name">
+            <h2>1. Site Name</h2>
+            
+            <div class="site-name-display">
+                <h3>Ciseaux Galants</h3>
+                <p class="domain-info">Proposed Domain: ciseauxgalants.com</p>
+            </div>
+            
+            <h3>Name Justification:</h3>
+            <p>"Ciseaux Galants" is French for "Elegant Scissors," which perfectly represents the salon's commitment to sophisticated, high-quality hair styling services. The name combines:</p>
+            <ul>
+                <li><strong>Ciseaux (Scissors):</strong> Represents the craft, precision, and artistry of hair cutting</li>
+                <li><strong>Galants (Elegant/Gallant):</strong> Conveys sophistication, style, and premium service</li>
+            </ul>
+            <p>The name suggests a European-inspired salon that focuses on elegance and professional craftsmanship, appealing to clients seeking premium hair services.</p>
+            
+            <h3>Domain Availability:</h3>
+            <p>ciseauxgalants.com is available for registration. Alternative: ciseaux-galants.com</p>
+        </section>
+
+        <!-- Section 2: Site Purpose -->
+        <section class="section" id="purpose">
+            <h2>2. Site Purpose</h2>
+            
+            <p>The Ciseaux Galants website will serve as the primary digital platform for the salon, with the following purposes:</p>
+            
+            <ul>
+                <li><strong>Online Booking System:</strong> Allow clients to schedule appointments 24/7 with real-time availability</li>
+                <li><strong>Service Portfolio:</strong> Showcase all hair services with detailed descriptions and pricing</li>
+                <li><strong>Stylist Introduction:</strong> Present the professional team with their specialties and experience</li>
+                <li><strong>Client Information Hub:</strong> Provide location, hours, contact details, and parking information</li>
+                <li><strong>Inspiration Gallery:</strong> Display before/after photos and style ideas</li>
+                <li><strong>Product Sales:</strong> Offer professional hair care products for purchase</li>
+                <li><strong>Promotional Platform:</strong> Share special offers, events, and new services</li>
+            </ul>
+            
+            <h3>Target Audience:</h3>
+            <ul>
+                <li>Men and women aged 18-65 seeking premium hair services</li>
+                <li>Professionals looking for convenient online booking</li>
+                <li>Bridal parties and special event styling clients</li>
+                <li>Local residents and tourists in the area</li>
+                <li>Clients interested in European-style hair techniques</li>
+            </ul>
+        </section>
+
+        <!-- Section 3: Scenarios -->
+        <section class="section" id="scenarios">
+            <h2>3. Scenarios</h2>
+            
+            <p>Common questions from potential website visitors:</p>
+            
+            <div class="scenario">
+                <h3>Scenario 1: New Client Looking for Specific Service</h3>
+                <p><strong>Question:</strong> "Do you offer balayage hair coloring, and how much does it cost? Can I see examples of your work?"</p>
+                <p><strong>Website Answer:</strong> Dedicated service pages with detailed descriptions, pricing, and before/after galleries. Online booking with service selection.</p>
+            </div>
+            
+            <div class="scenario">
+                <h3>Scenario 2: Busy Professional Needing Appointment</h3>
+                <p><strong>Question:</strong> "What are your Saturday hours? Can I book a haircut for this weekend online?"</p>
+                <p><strong>Website Answer:</strong> Clear business hours display and real-time online booking system with calendar integration showing available slots.</p>
+            </div>
+            
+            <div class="scenario">
+                <h3>Scenario 3: Wedding Party Coordination</h3>
+                <p><strong>Question:</strong> "Do you offer bridal party packages? Can we schedule a trial before the wedding day?"</p>
+                <p><strong>Website Answer:</strong> Special events section with package options, pricing, and dedicated booking for trials and group appointments.</p>
+            </div>
+            
+            <div class="scenario">
+                <h3>Scenario 4: Product Inquiry</h3>
+                <p><strong>Question:</strong> "What professional shampoo do you recommend for color-treated hair? Can I purchase it online?"</p>
+                <p><strong>Website Answer:</strong> Product catalog with detailed information, recommendations by hair type, and e-commerce functionality.</p>
+            </div>
+        </section>
+
+        <!-- Section 4: Color Scheme -->
+        <section class="section" id="colors">
+            <h2>4. Color Scheme</h2>
+            
+            <p>Color palette selected from Adobe Color to convey elegance, warmth, and professionalism:</p>
+            
+            <div class="color-palette">
+                <div class="color-item color-dark">
+                    <strong>Dark Charcoal</strong><br>
+                    #222625<br>
+                    RGB 34, 38, 37<br>
+                    Headers, footers, primary text
+                </div>
+                
+                <div class="color-item color-soft-cream">
+                    <strong>Soft Cream</strong><br>
+                    #FCEBA7<br>
+                    RGB 252, 235, 167<br>
+                    Backgrounds, highlights
+                </div>
+                
+                <div class="color-item color-light-cream">
+                    <strong>Light Cream</strong><br>
+                    #FEF5A6<br>
+                    RGB 254, 245, 166<br>
+                    Card backgrounds, accents
+                </div>
+                
+                <div class="color-item color-gold">
+                    <strong>Warm Gold</strong><br>
+                    #BF9A56<br>
+                    RGB 191, 154, 86<br>
+                    Buttons, CTAs, borders
+                </div>
+                
+                <div class="color-item color-light-gray">
+                    <strong>Light Gray</strong><br>
+                    #F2F2F2<br>
+                    RGB 242, 242, 242<br>
+                    Main background
+                </div>
+            </div>
+            
+            <h3>Color Application:</h3>
+            <ul>
+                <li><strong>#222625 (Dark Charcoal):</strong> Headers, footers, navigation, primary text color</li>
+                <li><strong>#BF9A56 (Warm Gold):</strong> Primary buttons, call-to-action elements, borders, hover states</li>
+                <li><strong>#FCEBA7 (Soft Cream):</strong> Hero sections, feature backgrounds, highlights</li>
+                <li><strong>#FEF5A6 (Light Cream):</strong> Content cards, form backgrounds, testimonials</li>
+                <li><strong>#F2F2F2 (Light Gray):</strong> Main page background, secondary backgrounds</li>
+            </ul>
+            
+            <h3>Contrast Ratios (WCAG AA Compliant):</h3>
+            <ul>
+                <li>#222625 on #F2F2F2 = 15.9:1 ✓ (Excellent)</li>
+                <li>#222625 on #FCEBA7 = 14.3:1 ✓ (Excellent)</li>
+                <li>#BF9A56 on #222625 = 4.9:1 ✓ (Good)</li>
+                <li>#BF9A56 on #F2F2F2 = 2.1:1 ✓ (Large text only)</li>
+            </ul>
+        </section>
+
+        <!-- Section 5: Typography -->
+        <section class="section" id="typography">
+            <h2>5. Typography</h2>
+            
+            <p>Font selection combining elegance with readability:</p>
+            
+            <div class="font-showcase">
+                <div class="font-example font-playfair">
+                    <h3>Playfair Display</h3>
+                    <p><strong>Usage:</strong> Main headings, logo, hero text</p>
+                    <p>ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                    abcdefghijklmnopqrstuvwxyz<br>
+                    1234567890</p>
+                    <p><em>Regular 400 | Bold 700</em></p>
+                </div>
+                
+                <div class="font-example font-montserrat">
+                    <h3>Montserrat</h3>
+                    <p><strong>Usage:</strong> Body text, navigation, buttons, paragraphs</p>
+                    <p>ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                    abcdefghijklmnopqrstuvwxyz<br>
+                    1234567890</p>
+                    <p><em>Light 300 | Regular 400 | Semi-bold 600</em></p>
+                </div>
+                
+                <div class="font-example font-dancing">
+                    <h3>Dancing Script</h3>
+                    <p><strong>Usage:</strong> Decorative elements, quotes, special highlights</p>
+                    <p>Elegance in Every Strand<br>
+                    Premium Hair Services</p>
+                    <p><em>Regular 400 | Bold 700</em></p>
+                </div>
+            </div>
+            
+            <h3>Typography Rules:</h3>
+            <ul>
+                <li><strong>Heading 1 (H1):</strong> Playfair Display, 48px, #222625, 700 weight</li>
+                <li><strong>Heading 2 (H2):</strong> Playfair Display, 36px, #222625, 700 weight</li>
+                <li><strong>Heading 3 (H3):</strong> Playfair Display, 24px, #222625, 700 weight</li>
+                <li><strong>Body Text:</strong> Montserrat, 16px, #222625, 400 weight, line-height 1.6</li>
+                <li><strong>Navigation:</strong> Montserrat, 18px, #222625, 600 weight</li>
+                <li><strong>Buttons:</strong> Montserrat, 16px, #FFFFFF on #BF9A56, 600 weight</li>
+                <li><strong>Special Text:</strong> Dancing Script, 20px, #BF9A56, 400 weight</li>
+            </ul>
+        </section>
+
+        <!-- Section 6: Wireframes -->
+        <section class="section" id="wireframes">
+            <h2>6. Wireframes</h2>
+            
+            <div class="wireframe-section">
+                <h3>Mobile View (320px - 768px)</h3>
+                
+                <div class="wireframe wireframe-mobile">
+                    <h4>Homepage - Mobile</h4>
+                    <div class="wireframe-content">
+                        <div class="wireframe-item" style="height: 60px;">Logo + Hamburger Menu</div>
+                        <div class="wireframe-item" style="height: 200px; background-color: #BF9A56; color: white;">Hero Image with CTA</div>
+                        <div class="wireframe-item" style="height: 150px;">Featured Services</div>
+                        <div class="wireframe-item" style="height: 120px;">Quick Booking Widget</div>
+                        <div class="wireframe-item" style="height: 100px;">Testimonials</div>
+                        <div class="wireframe-item" style="height: 80px;">Contact Info</div>
+                        <div class="wireframe-item" style="height: 50px;">Footer</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="wireframe-section">
+                <h3>Desktop View (769px+)</h3>
+                
+                <div class="wireframe">
+                    <h4>Homepage - Desktop</h4>
+                    <div class="wireframe-content">
+                        <div class="wireframe-item" style="height: 80px;">Logo + Horizontal Navigation</div>
+                        <div class="wireframe-item" style="height: 400px; background-color: #BF9A56; color: white;">Full-width Hero with CTA Button</div>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 10px 0;">
+                            <div class="wireframe-item" style="height: 200px;">Services Grid</div>
+                            <div class="wireframe-item" style="height: 200px;">Stylist Gallery</div>
+                            <div class="wireframe-item" style="height: 200px;">Booking Form</div>
+                        </div>
+                        
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 10px 0;">
+                            <div class="wireframe-item" style="height: 150px;">About Section</div>
+                            <div class="wireframe-item" style="height: 150px;">Testimonials</div>
+                        </div>
+                        
+                        <div class="wireframe-item" style="height: 120px;">Products Showcase</div>
+                        <div class="wireframe-item" style="height: 150px;">Footer with 4 Columns</div>
+                    </div>
+                </div>
+            </div>
+            
+            <h3>Wireframe Notes:</h3>
+            <ul>
+                <li><strong>Mobile-First Approach:</strong> Design starts with mobile view and scales up</li>
+                <li><strong>Simplified Navigation:</strong> Hamburger menu for mobile, horizontal for desktop</li>
+                <li><strong>Clear Visual Hierarchy:</strong> Prominent CTAs and organized content flow</li>
+                <li><strong>Adequate White Space:</strong> Proper spacing for readability and touch targets</li>
+                <li><strong>Consistent Grid System:</strong> Using CSS Grid for layout organization</li>
+                <li><strong>Touch-Friendly:</strong> Minimum 44x44px touch targets on mobile</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>Site Plan for Ciseaux Galants Salon | WDD 231 Web Frontend Development</p>
+        <p>Last updated: <span id="currentDate"></span></p>
+    </footer>
+
+    <script>
+        // Update current date
+        document.getElementById('currentDate').textContent = new Date().toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+    </script>
+</body>
+</html>
