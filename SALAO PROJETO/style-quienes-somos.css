@@ -1,0 +1,260 @@
+/* ========== PÁGINA QUIÉNES SOMOS ========== */
+
+/* Hero */
+.quienes-hero {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/salao-dentro.jpeg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 120px 0 100px; /* Aumentado padding inferior */
+    margin-top: 80px;
+}
+
+.quienes-hero h2 {
+    font-size: 3.5rem;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.quienes-hero p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+    opacity: 0.9;
+}
+
+/* Botão no hero */
+.btn-reservar-hero {
+    display: inline-block;
+    background-color: #8a6d3b;
+    color: #ffffff !important;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    margin-top: 20px;
+    border: 2px solid #8a6d3b;
+    transition: all 0.3s ease;
+}
+
+.btn-reservar-hero:hover {
+    background-color: #FCEBA7;
+    color: #8a6d3b !important;
+}
+
+/* Foto do dono (sobreposta) - ajustada para não cobrir o botão */
+.foto-dono {
+    text-align: center;
+    margin: -60px auto 40px; /* Antes -100px, agora -60px */
+    position: relative;
+    z-index: 10;
+}
+
+.foto-dono img {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 8px solid white;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+/* Seção Sobre Nós */
+.sobre-nos {
+    padding: 40px 0 60px;
+}
+
+.sobre-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.sobre-texto h3 {
+    font-size: 2.2rem;
+    color: #8a6d3b;
+    margin-bottom: 20px;
+    font-family: 'Playfair Display', serif;
+}
+
+.sobre-texto p {
+    margin-bottom: 20px;
+    line-height: 1.8;
+    color: #555;
+}
+
+.experiencia-badge {
+    background-color: #8a6d3b;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    display: inline-block;
+    font-weight: 600;
+    margin-top: 15px;
+}
+
+/* Seção Filosofia */
+.filosofia {
+    background-color: #f9f9f9;
+    padding: 80px 0;
+}
+
+.filosofia-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.filosofia-card {
+    background: white;
+    padding: 35px 25px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.filosofia-card:hover {
+    transform: translateY(-10px);
+}
+
+.filosofia-card i {
+    font-size: 3rem;
+    color: #8a6d3b;
+    margin-bottom: 20px;
+}
+
+.filosofia-card h4 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.filosofia-card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Seção Equipe - imagens padronizadas com moldura */
+.equipo-lista {
+    padding: 80px 0;
+}
+
+.equipo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-top: 40px;
+    justify-items: center;
+}
+
+.equipo-miembro {
+    text-align: center;
+    max-width: 280px;
+}
+
+.equipo-miembro img {
+    width: 200px !important;
+    height: 200px !important;
+    border-radius: 50% !important;
+    object-fit: cover !important;
+    border: 5px solid #8a6d3b !important;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    margin-bottom: 20px;
+}
+
+.equipo-miembro h4 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.equipo-miembro p {
+    color: #8a6d3b;
+    font-weight: 500;
+}
+
+/* CTA final */
+.cta-equipo {
+    background: linear-gradient(135deg, #8a6d3b 0%, #6b522c 100%);
+    color: white;
+    text-align: center;
+    padding: 60px 0;
+}
+
+.cta-equipo h3 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.cta-equipo p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 30px;
+}
+
+.btn-cta-equipo {
+    background: white;
+    color: #8a6d3b !important;
+    padding: 15px 40px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.2rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-cta-equipo:hover {
+    background: #8a6d3b;
+     border: 5px solid #FCEBA7 !important;
+    color: white !important;
+    transform: scale(1.05);
+}
+
+/* Footer: links de contato sempre brancos e sem sublinhado */
+footer .footer-contacto a {
+    color: #ffffff !important;
+    text-decoration: none !important;
+}
+
+footer .footer-contacto a:hover {
+    text-decoration: underline !important;
+    color: #f0e6d2 !important;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+    .quienes-hero h2 {
+        font-size: 2.5rem;
+    }
+
+    .sobre-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .foto-dono {
+        margin-top: -40px; /* Ajustado para mobile */
+    }
+
+    .foto-dono img {
+        width: 160px;
+        height: 160px;
+    }
+
+    .equipo-miembro img {
+        width: 180px !important;
+        height: 180px !important;
+    }
+
+    .cta-equipo h3 {
+        font-size: 2rem;
+    }
+}

@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cisealux Galants - Salón Unissex</title>
+    <meta name="description" content="Salón de belleza unissex Cisealux Galants en Barcelona. Cortes, coloración, tratamientos capilares, barba y masajes. Reserva tu cita online.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/accordion-js@3.3.4/dist/accordion.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
+    <style>
+        /* Estilos para o mapa e avaliações */
+        .mapa-real {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .mapa-real iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Estilos para a seção de avaliações */
+        .testimonios {
+            padding: 80px 0;
+            background-color: #f9f9f9;
+        }
+
+        .testimonios-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .testimonio-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .testimonio-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .testimonio-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .testimonio-info h4 {
+            color: #333;
+            margin-bottom: 5px;
+            font-size: 18px;
+        }
+
+        .testimonio-servicio {
+            color: #8a6d3b;
+            font-weight: 500;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .testimonio-estilista {
+            color: #666;
+            font-size: 13px;
+            font-style: italic;
+        }
+
+        .testimonio-fecha {
+            color: #999;
+            font-size: 14px;
+        }
+
+        .estrellas {
+            color: #FFD700;
+            margin: 10px 0;
+            font-size: 18px;
+        }
+
+        .testimonio-texto {
+            line-height: 1.6;
+            color: #555;
+            font-style: italic;
+            margin-bottom: 20px;
+            padding-left: 20px;
+            border-left: 3px solid #8a6d3b;
+        }
+
+        /* Estilos para o formulário de agendamento */
+        #estilista {
+            background-color: white;
+            color: #333;
+            opacity: 1;
+        }
+
+        #estilista option {
+            background-color: white;
+            color: #333;
+        }
+
+        /* Botões personalizados */
+        .btn-whatsapp-directo, .btn-booksy-directo {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            text-align: center;
+            width: 100%;
+        }
+        
+        .btn-whatsapp-directo {
+            background-color: #25D366;
+            color: white;
+            border: 2px solid #25D366;
+        }
+        
+        .btn-whatsapp-directo:hover {
+            background-color: #128C7E;
+            border-color: #128C7E;
+            transform: translateY(-2px);
+        }
+        
+        .btn-booksy-directo {
+            background-color: #8a6d3b;
+            color: white;
+            border: 2px solid #8a6d3b;
+            margin-top: 15px;
+        }
+        
+        .btn-booksy-directo:hover {
+            background-color: #6b522c;
+            border-color: #6b522c;
+            transform: translateY(-2px);
+        }
+        
+        .btn-whatsapp-directo i, .btn-booksy-directo i {
+            margin-right: 8px;
+        }
+
+        /* Estilos para o modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .modal-header h3 {
+            color: #8a6d3b;
+            margin: 0;
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #666;
+        }
+
+        .confirmacion-icon {
+            text-align: center;
+            font-size: 60px;
+            color: #4CAF50;
+            margin: 20px 0;
+        }
+
+        .confirmacion-texto {
+            text-align: center;
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .detalles-reserva {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .detalles-reserva p {
+            margin: 8px 0;
+            color: #555;
+        }
+
+        .modal-footer {
+            display: flex;
+            gap: 10px;
+            justify-content: flex-end;
+            margin-top: 20px;
+        }
+
+        .btn-modal {
+            padding: 10px 20px;
+            background-color: #8a6d3b;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .btn-modal-secondary {
+            padding: 10px 20px;
+            background-color: #25D366;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header y Navegación -->
+    <header>
+        <div class="container">
+            <div class="logo-container">
+                <a href="index.html" class="logo-img">
+                    <!-- LOGO ATUALIZADO -->
+                    <img src="images/LOGO.png" alt="Cisealux Galants Logo">
+                </a>
+                <div class="logo-text">
+                    <h1>Cisealux <span>Galants</span></h1>
+                    <p class="tagline">Salón Unissex - Estilo & Elegancia</p>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Inicio</a></li>
+                    <li><a href="quienes-somos.html">Quiénes Somos</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#testimonios">Testimonios</a></li>
+                    <li><a href="#localizacion">Localización</a></li>
+                    <li><a href="#agendar" class="btn-agendar">Agendar Cita</a></li>
+                </ul>
+                <button class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Sección Hero -->
+    <section id="inicio" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Tu estilo, nuestra pasión</h2>
+                <p>En Cisealux Galants nos especializamos en realzar tu belleza natural con cortes, coloración y tratamientos de última tendencia. Un espacio donde la elegancia y la comodidad se encuentran.</p>
+                <!-- LINK DO BOOKSY ATUALIZADO -->
+                <a href="https://booksy.com/es-es/136783_ciseaux-galants_peluqueria_48863_barcelona?do=invite&_branch_match_id=1544150758857710068&utm_medium=merchant_customer_invite&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXT07J0UvKz88urtRLzs%2FVL8ovD3Q0qwxKjUyyrytKTUstKsrMS49PAooXpxbZOmcU5eemAgAbsAxXPAAAAA%3D%3D" 
+                   class="btn-hero" 
+                   target="_blank" 
+                   rel="noopener noreferrer">
+                   Reserva tu cita ahora
+                </a>
+                <div class="hero-buttons">
+                    <a href="quienes-somos.html" class="btn-secondary">Conoce al equipo</a>
+                    <!-- BOTÃO CONTÁCTANOS REMOVIDO -->
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-image-title">
+                    <h3>Nuestro Salón</h3>
+                    <p>Ambiente moderno y acogedor</p>
+                </div>
+                <div class="image-container">
+                    <div class="image-placeholder salao">
+                        <img src="images/salao-front.jpeg" alt="Salón Cisealux Galants">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Servicios con Acordeón -->
+    <section id="servicios" class="servicios">
+        <div class="container">
+            <h2 class="section-title">Nuestros Servicios</h2>
+            <p class="section-subtitle">Ofrecemos una amplia gama de servicios para hombres y mujeres</p>
+            
+            <div class="accordion">
+                <!-- MASAJES -->
+                <div class="accordion__item">
+                    <div class="accordion__header">
+                        <h3><i class="fas fa-spa"></i> MASAJES <span>1 servicio</span></h3>
+                        <span class="accordion__icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="accordion__content">
+                        <div class="servicios-carousel">
+                            <div class="carousel-container">
+                                <div class="carousel-track">
+                                    <!-- Masaje 30' -->
+                                    <div class="servicio-carousel-item">
+                                        <div class="servicio-info">
+                                            <h4>Masaje 30' - Masaje relajante</h4>
+                                            <p>30 minutos de masaje relajante para aliviar tensiones y estrés.</p>
+                                            <div class="servicio-precio">
+                                                <span class="precio-actual">30,00 €</span>
+                                            </div>
+                                            <div class="tiempo">
+                                                <i class="far fa-clock"></i> 30 minutos
+                                            </div>
+                                        </div>
+                                        <div class="carousel-buttons">
+                                            <button class="btn-reservar">Reservar</button>
+                                            <!-- LINK DO WHATSAPP ATUALIZADO -->
+                                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                                <i class="fab fa-whatsapp"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="carousel-arrow prev"><i class="fas fa-chevron-left"></i></button>
+                                <button class="carousel-arrow next"><i class="fas fa-chevron-right"></i></button>
+                            </div>
+                            <div class="carousel-nav">
+                                <span class="carousel-dot active"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CORTE -->
+                <div class="accordion__item">
+                    <div class="accordion__header">
+                        <h3><i class="fas fa-cut"></i> CORTE <span>7 servicios</span></h3>
+                        <span class="accordion__icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="accordion__content">
+                        <div class="servicios-carousel">
+                            <div class="carousel-container">
+                                <div class="carousel-track">
+                                    <!-- Corte femenino -->
+                                    <div class="servicio-carousel-item">
+                                        <div class="servicio-info">
+                                            <h4>Corte femenino</h4>
+                                            <p>Corte moderno adaptado a tu estilo y tipo de cabello.</p>
+                                            <div class="servicio-precio">
+                                                <span class="precio-actual">18,00 €</span>
+                                                <span class="precio-antiguo">20,00 €</span>
+                                                <span class="descuento">-10%</span>
+                                            </div>
+                                            <div class="tiempo">
+                                                <i class="far fa-clock"></i> 35 minutos
+                                            </div>
+                                            <p class="precio-info">Precio más bajo en 30 días, antes del descuento: 20,00 €</p>
+                                            <p class="ahorro">Ahorra hasta un 10%</p>
+                                        </div>
+                                        <div class="carousel-buttons">
+                                            <button class="btn-reservar">Reservar</button>
+                                            <!-- LINK DO WHATSAPP ATUALIZADO -->
+                                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                                <i class="fab fa-whatsapp"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <!-- Lavar y cortar -->
+                                    <div class="servicio-carousel-item">
+                                        <div class="servicio-info">
+                                            <h4>Lavar y cortar</h4>
+                                            <p>Lavado profesional y corte básico.</p>
+                                            <div class="servicio-precio">
+                                                <span class="precio-actual">13,50 €</span>
+                                                <span class="precio-antiguo">15,00 €</span>
+                                                <span class="descuento">-10%</span>
+                                            </div>
+                                            <div class="tiempo">
+                                                <i class="far fa-clock"></i> 20 minutos
+                                            </div>
+                                            <p class="precio-info">Precio más bajo en 30 días, antes del descuento: 15,00 €</p>
+                                            <p class="ahorro">Ahorra hasta un 10%</p>
+                                        </div>
+                                        <div class="carousel-buttons">
+                                            <button class="btn-reservar">Reservar</button>
+                                            <!-- LINK DO WHATSAPP ATUALIZADO -->
+                                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                                <i class="fab fa-whatsapp"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="carousel-arrow prev"><i class="fas fa-chevron-left"></i></button>
+                                <button class="carousel-arrow next"><i class="fas fa-chevron-right"></i></button>
+                            </div>
+                            <div class="carousel-nav">
+                                <span class="carousel-dot active"></span>
+                                <span class="carousel-dot"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- COLOR -->
+                <div class="accordion__item">
+                    <div class="accordion__header">
+                        <h3><i class="fas fa-paint-brush"></i> COLOR <span>20 servicios</span></h3>
+                        <span class="accordion__icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="accordion__content">
+                        <div class="servicios-carousel">
+                            <div class="carousel-container">
+                                <div class="carousel-track">
+                                    <!-- Color raíz -->
+                                    <div class="servicio-carousel-item">
+                                        <div class="servicio-info">
+                                            <h4>Color raíz</h4>
+                                            <p>Aplicación de color en la raíz del cabello.</p>
+                                            <div class="servicio-precio">
+                                                <span class="precio-actual">21,60 €</span>
+                                                <span class="precio-antiguo">24,00 €</span>
+                                                <span class="descuento">-10%</span>
+                                            </div>
+                                            <div class="tiempo">
+                                                <i class="far fa-clock"></i> 35 minutos
+                                            </div>
+                                            <p class="precio-info">Precio más bajo en 30 días, antes del descuento: 24,00 €</p>
+                                            <p class="ahorro">Ahorra hasta un 10%</p>
+                                        </div>
+                                        <div class="carousel-buttons">
+                                            <button class="btn-reservar">Reservar</button>
+                                            <!-- LINK DO WHATSAPP ATUALIZADO -->
+                                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                                <i class="fab fa-whatsapp"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <!-- Matiz | baño de color largo -->
+                                    <div class="servicio-carousel-item">
+                                        <div class="servicio-info">
+                                            <h4>Matiz | baño de color largo</h4>
+                                            <p>Baño de color para cabello largo.</p>
+                                            <div class="servicio-precio">
+                                                <span class="precio-actual">27,00 €</span>
+                                                <span class="precio-antiguo">30,00 €</span>
+                                                <span class="descuento">-10%</span>
+                                            </div>
+                                            <div class="tiempo">
+                                                <i class="far fa-clock"></i> 40 minutos
+                                            </div>
+                                            <p class="precio-info">Precio más bajo en 30 días, antes del descuento: 30,00 €</p>
+                                            <p class="ahorro">Ahorra hasta un 10%</p>
+                                        </div>
+                                        <div class="carousel-buttons">
+                                            <button class="btn-reservar">Reservar</button>
+                                            <!-- LINK DO WHATSAPP ATUALIZADO -->
+                                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                                <i class="fab fa-whatsapp"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <!-- Color completo corto -->
+                                    <div class="servicio-carousel-item">
+                                        <div class="servicio-info">
+                                            <h4>Color completo corto</h4>
+                                            <p>Coloración completa para cabello corto.</p>
+                                            <div class="servicio-precio">
+                                                <span class="precio-actual">31,50 €</span>
+                                                <span class="precio-antiguo">35,00 €</span>
+                                                <span class="descuento">-10%</span>
+                                            </div>
+                                            <div class="tiempo">
+                                                <i class="far fa-clock"></i> 30 minutos
+                                            </div>
+                                            <p class="precio-info">Precio más bajo en 30 días, antes del descuento: 35,00 €</p>
+                                            <p class="ahorro">Ahorra hasta un 10%</p>
+                                        </div>
+                                        <div class="carousel-buttons">
+                                            <button class="btn-reservar">Reservar</button>
+                                            <!-- LINK DO WHATSAPP ATUALIZADO -->
+                                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                                <i class="fab fa-whatsapp"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="carousel-arrow prev"><i class="fas fa-chevron-left"></i></button>
+                                <button class="carousel-arrow next"><i class="fas fa-chevron-right"></i></button>
+                            </div>
+                            <div class="carousel-nav">
+                                <span class="carousel-dot active"></span>
+                                <span class="carousel-dot"></span>
+                                <span class="carousel-dot"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LAVADO Y PEINADO -->
+                <div class="accordion__item">
+                    <div class="accordion__header">
+                        <h3><i class="fas fa-shower"></i> LAVADO Y PEINADO <span>14 servicios</span></h3>
+                        <span class="accordion__icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="accordion__content">
+                        <div class="servicios-carousel">
+                            <div class="carousel-container">
+                                <div class="carousel-track">
+                                    <!-- Lavar y peinar corto -->
+                                    <div class="servicio-carousel-item">
+                                        <div class="servicio-info">
+                                            <h4>Lavar y peinar corto</h4>
+                                            <p>Lavado y peinado para cabello corto.</p>
+                                            <div class="servicio-precio">
+                                                <span class="precio-actual">13,50 €</span>
+                                                <span class="precio-antiguo">15,00 €</span>
+                                                <span class="descuento">-10%</span>
+                                            </div>
+                                            <div class="tiempo">
+                                                <i class="far fa-clock"></i> 30 minutos
+                                            </div>
+                                            <p class="precio-info">Precio más bajo en 30 días, antes del descuento: 15,00 €</p>
+                                            <p class="ahorro">Ahorra hasta un 10%</p>
+                                            <p class="extras">Extras</p>
+                                        </div>
+                                        <div class="carousel-buttons">
+                                            <button class="btn-reservar">Reservar</button>
+                                            <!-- LINK DO WHATSAPP ATUALIZADO -->
+                                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                                <i class="fab fa-whatsapp"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <!-- Lavar y peinar medio -->
+                                    <div class="servicio-carousel-item">
+                                        <div class="servicio-info">
+                                            <h4>Lavar y peinar medio</h4>
+                                            <p>Lavado y peinado para cabello medio.</p>
+                                            <div class="servicio-precio">
+                                                <span class="precio-actual">16,11 €</span>
+                                                <span class="precio-antiguo">17,90 €</span>
+                                                <span class="descuento">-10%</span>
+                                            </div>
+                                            <div class="tiempo">
+                                                <i class="far fa-clock"></i> 30 minutos
+                                            </div>
+                                            <p class="precio-info">Precio más bajo en 30 días, antes del descuento: 17,90 €</p>
+                                            <p class="ahorro">Ahorra hasta un 10%</p>
+                                            <p class="extras">Extras</p>
+                                        </div>
+                                        <div class="carousel-buttons">
+                                            <button class="btn-reservar">Reservar</button>
+                                            <!-- LINK DO WHATSAPP ATUALIZADO -->
+                                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                                <i class="fab fa-whatsapp"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <!-- Lavar y peinar largo -->
+                                    <div class="servicio-carousel-item">
+                                        <div class="servicio-info">
+                                            <h4>Lavar y peinar largo</h4>
+                                            <p>Lavado y peinado para cabello largo.</p>
+                                            <div class="servicio-precio">
+                                                <span class="precio-actual">17,91 €</span>
+                                                <span class="precio-antiguo">19,90 €</span>
+                                                <span class="descuento">-10%</span>
+                                            </div>
+                                            <div class="tiempo">
+                                                <i class="far fa-clock"></i> 30 minutos
+                                            </div>
+                                            <p class="precio-info">Precio más bajo en 30 días, antes del descuento: 19,90 €</p>
+                                            <p class="ahorro">Ahorra hasta un 10%</p>
+                                            <p class="extras">Extras</p>
+                                        </div>
+                                        <div class="carousel-buttons">
+                                            <button class="btn-reservar">Reservar</button>
+                                            <!-- LINK DO WHATSAPP ATUALIZADO -->
+                                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                                <i class="fab fa-whatsapp"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="carousel-arrow prev"><i class="fas fa-chevron-left"></i></button>
+                                <button class="carousel-arrow next"><i class="fas fa-chevron-right"></i></button>
+                            </div>
+                            <div class="carousel-nav">
+                                <span class="carousel-dot active"></span>
+                                <span class="carousel-dot"></span>
+                                <span class="carousel-dot"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MECHAS -->
+                <div class="accordion__item">
+                    <div class="accordion__header">
+                        <h3><i class="fas fa-sun"></i> MECHAS <span>12 servicios</span></h3>
+                        <span class="accordion__icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="accordion__content">
+                        <div class="servicios-carousel">
+                            <div class="carousel-container">
+                                <div class="carousel-track">
+                                    <!-- Mechas toda cabeza plata corto -->
+                                    <div class="servicio-carousel-item">
+                                        <div class="servicio-info">
+                                            <h4>Mechas toda cabeza plata corto</h4>
+                                            <p>Aplicación de mechas en plata para cabello corto.</p>
+                                            <div class="servicio-precio">
+                                                <span class="precio-actual">45,00 €</span>
+                                                <span class="precio-antiguo">50,00 €</span>
+                                                <span class="descuento">-10%</span>
+                                            </div>
+                                            <div class="tiempo">
+                                                <i class="far fa-clock"></i> 1 hora
+                                            </div>
+                                            <p class="precio-info">Precio más bajo en 30 días, antes del descuento: 50,00 €</p>
+                                            <p class="ahorro">Ahorra hasta un 10%</p>
+                                        </div>
+                                        <div class="carousel-buttons">
+                                            <button class="btn-reservar">Reservar</button>
+                                            <!-- LINK DO WHATSAPP ATUALIZADO -->
+                                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                                <i class="fab fa-whatsapp"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <!-- Mechas toda cabeza plata medio -->
+                                    <div class="servicio-carousel-item">
+                                        <div class="servicio-info">
+                                            <h4>Mechas toda cabeza plata medio</h4>
+                                            <p>Aplicación de mechas en plata para cabello medio.</p>
+                                            <div class="servicio-precio">
+                                                <span class="precio-actual">58,50 €</span>
+                                                <span class="precio-antiguo">65,00 €</span>
+                                                <span class="descuento">-10%</span>
+                                            </div>
+                                            <div class="tiempo">
+                                                <i class="far fa-clock"></i> 1 hora
+                                            </div>
+                                            <p class="precio-info">Precio más bajo en 30 días, antes del descuento: 65,00 €</p>
+                                            <p class="ahorro">Ahorra hasta un 10%</p>
+                                        </div>
+                                        <div class="carousel-buttons">
+                                            <button class="btn-reservar">Reservar</button>
+                                            <!-- LINK DO WHATSAPP ATUALIZADO -->
+                                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                                <i class="fab fa-whatsapp"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="carousel-arrow prev"><i class="fas fa-chevron-left"></i></button>
+                                <button class="carousel-arrow next"><i class="fas fa-chevron-right"></i></button>
+                            </div>
+                            <div class="carousel-nav">
+                                <span class="carousel-dot active"></span>
+                                <span class="carousel-dot"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TRATAMIENTOS -->
+                <div class="accordion__item">
+                    <div class="accordion__header">
+                        <h3><i class="fas fa-air-freshener"></i> TRATAMIENTOS <span>11 servicios</span></h3>
+                        <span class="accordion__icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="accordion__content">
+                        <div class="servicios-carousel">
+                            <div class="carousel-container">
+                                <div class="carousel-track">
+                                    <!-- Cronograma Capilar -->
+                                    <div class="servicio-carousel-item">
+                                        <div class="servicio-info">
+                                            <h4>Cronograma Capilar – Plan de Cuidado en 3 Semanas</h4>
+                                            <p>El cronograma capilar es un plan profesional de cuidado del cabello diseñado para recuperar la salud capilar en 3 semanas.</p>
+                                            <div class="servicio-precio">
+                                                <span class="precio-actual">65,00 €</span>
+                                            </div>
+                                            <div class="tiempo">
+                                                <i class="far fa-clock"></i> 35 minutos
+                                            </div>
+                                        </div>
+                                        <div class="carousel-buttons">
+                                            <button class="btn-reservar">Reservar</button>
+                                            <!-- LINK DO WHATSAPP ATUALIZADO -->
+                                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                                <i class="fab fa-whatsapp"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <!-- TRATAMIENTO X-PRESS ORGÁNICO CORTO -->
+                                    <div class="servicio-carousel-item">
+                                        <div class="servicio-info">
+                                            <h4>TRATAMIENTO X-PRESS ORGÁNICO CORTO</h4>
+                                            <p>Ideal para cabellos que han pasado por procesos químicos, coloraciones o que necesitan reparación profunda.</p>
+                                            <div class="servicio-precio">
+                                                <span class="precio-actual">63,00 €</span>
+                                                <span class="precio-antiguo">70,00 €</span>
+                                            </div>
+                                            <div class="tiempo">
+                                                <i class="far fa-clock"></i> 40 minutos
+                                            </div>
+                                        </div>
+                                        <div class="carousel-buttons">
+                                            <button class="btn-reservar">Reservar</button>
+                                            <!-- LINK DO WHATSAPP ATUALIZADO -->
+                                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                                <i class="fab fa-whatsapp"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="carousel-arrow prev"><i class="fas fa-chevron-left"></i></button>
+                                <button class="carousel-arrow next"><i class="fas fa-chevron-right"></i></button>
+                            </div>
+                            <div class="carousel-nav">
+                                <span class="carousel-dot active"></span>
+                                <span class="carousel-dot"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BARBA -->
+                <div class="accordion__item">
+                    <div class="accordion__header">
+                        <h3><i class="fas fa-user-tie"></i> BARBA <span>7 servicios</span></h3>
+                        <span class="accordion__icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="accordion__content">
+                        <div class="servicios-carousel">
+                            <div class="carousel-container">
+                                <div class="carousel-track">
+                                    <!-- Servicio de barba -->
+                                    <div class="servicio-carousel-item">
+                                        <div class="servicio-info">
+                                            <h4>Afeitado y cuidado de barba</h4>
+                                            <p>Afeitado profesional y cuidado completo de la barba.</p>
+                                            <div class="servicio-precio">
+                                                <span class="precio-actual">18,00 €</span>
+                                                <span class="precio-antiguo">20,00 €</span>
+                                                <span class="descuento">-10%</span>
+                                            </div>
+                                            <div class="tiempo">
+                                                <i class="far fa-clock"></i> 35 minutos
+                                            </div>
+                                            <p class="precio-info">Precio más bajo en 30 días, antes del descuento: 20,00 €</p>
+                                            <p class="ahorro">Ahorra hasta un 10%</p>
+                                        </div>
+                                        <div class="carousel-buttons">
+                                            <button class="btn-reservar">Reservar</button>
+                                            <!-- LINK DO WHATSAPP ATUALIZADO -->
+                                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                                <i class="fab fa-whatsapp"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="carousel-arrow prev"><i class="fas fa-chevron-left"></i></button>
+                                <button class="carousel-arrow next"><i class="fas fa-chevron-right"></i></button>
+                            </div>
+                            <div class="carousel-nav">
+                                <span class="carousel-dot active"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MOLDADO -->
+                <div class="accordion__item">
+                    <div class="accordion__header">
+                        <h3><i class="fas fa-wind"></i> MOLDADO <span>1 servicio</span></h3>
+                        <span class="accordion__icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="accordion__content">
+                        <div class="servicios-carousel">
+                            <div class="carousel-container">
+                                <div class="carousel-track">
+                                    <!-- Moldeado de cabello -->
+                                    <div class="servicio-carousel-item">
+                                        <div class="servicio-info">
+                                            <h4>Moldeado profesional</h4>
+                                            <p>Moldeado y styling profesional para cualquier ocasión.</p>
+                                            <div class="servicio-precio">
+                                                <span class="precio-actual">25,00 €</span>
+                                            </div>
+                                            <div class="tiempo">
+                                                <i class="far fa-clock"></i> 30 minutos
+                                            </div>
+                                        </div>
+                                        <div class="carousel-buttons">
+                                            <button class="btn-reservar">Reservar</button>
+                                            <!-- LINK DO WHATSAPP ATUALIZADO -->
+                                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                                <i class="fab fa-whatsapp"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="carousel-arrow prev"><i class="fas fa-chevron-left"></i></button>
+                                <button class="carousel-arrow next"><i class="fas fa-chevron-right"></i></button>
+                            </div>
+                            <div class="carousel-nav">
+                                <span class="carousel-dot active"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NOVA SEÇÃO: Testimonios de Clientes -->
+    <section id="testimonios" class="testimonios">
+        <div class="container">
+            <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+            <p class="section-subtitle">Opiniones reales con calificación de 5 estrellas</p>
+            
+            <div class="testimonios-container">
+                <!-- Testimonio 1 -->
+                <div class="testimonio-card">
+                    <div class="testimonio-header">
+                        <div class="testimonio-info">
+                            <h4>Daniela V</h4>
+                            <div class="testimonio-servicio">Corte femenino, BELLEZA BOTÁNICA: Orquídea Premium</div>
+                            <div class="testimonio-estilista">realizado por Cristo Vieira</div>
+                        </div>
+                        <div class="testimonio-fecha">Ene. 16, 2026</div>
+                    </div>
+                    <div class="estrellas">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="testimonio-texto">
+                        ¡Quedé extremamente feliz con mi resultado! El salon es muy lindo/limpio y todos fueron muy amables. 100% voy a regresar!! Ellos hablan español, portugués y inglés.
+                    </div>
+                </div>
+
+                <!-- Testimonio 2 -->
+                <div class="testimonio-card">
+                    <div class="testimonio-header">
+                        <div class="testimonio-info">
+                            <h4>Christopher C</h4>
+                            <div class="testimonio-servicio">Corte masculino Ciseaux tijera y maquina, Corte femenino</div>
+                            <div class="testimonio-estilista">realizado por Cristo Vieira</div>
+                        </div>
+                        <div class="testimonio-fecha">Dic. 25, 2025</div>
+                    </div>
+                    <div class="estrellas">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="testimonio-texto">
+                        Recomendado por completo. El trato, talento y carisma de Cristo es increíble. Mi novia y yo quedamos encantados con el nuevo look. ¡Definitivamente volveremos!
+                    </div>
+                </div>
+
+                <!-- Testimonio 3 -->
+                <div class="testimonio-card">
+                    <div class="testimonio-header">
+                        <div class="testimonio-info">
+                            <h4>Emilia B</h4>
+                            <div class="testimonio-servicio">Lavar y peinar medio, Plancha adicional</div>
+                            <div class="testimonio-estilista">realizado por Cristo Vieira</div>
+                        </div>
+                        <div class="testimonio-fecha">Ago. 27, 2025</div>
+                    </div>
+                    <div class="estrellas">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="testimonio-texto">
+                        Un gran descubrimiento!! Cristo trabaja y trata el cabello con mucho mimo, y de forma IMPECABLE. El trato es muy bueno por parte de los dos, te hacen sentir muy agusto. Precios muy ajustados para la calidad que ofrecen. Sin duda para repetir.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Localización con Mapa -->
+    <section id="localizacion" class="localizacion">
+        <div class="container">
+            <h2 class="section-title">Nuestra Localización</h2>
+            <p class="section-subtitle">Ven a visitarnos en nuestro salón en Barcelona</p>
+            
+            <div class="localizacion-container">
+                <div class="info-localizacion">
+                    <h3><i class="fas fa-map-marker-alt"></i> Dirección</h3>
+                    <div class="direccion">
+                        <p><i class="fas fa-map-pin"></i> <strong>Carrer Gran de Sant Andreu, 62</strong></p>
+                        <p><i class="fas fa-city"></i> 08030, Barcelona</p>
+                        <!-- NÚMERO DE TELEFONE ATUALIZADO -->
+                        <p><i class="fas fa-phone"></i> <a href="tel:+34605886004">+34 605 886 004</a></p>
+                        <p><i class="fas fa-envelope"></i> <a href="mailto:info@cisealuxgalants.com">info@cisealuxgalants.com</a></p>
+                    </div>
+                    
+                    <div class="servicios-info">
+                        <h4><i class="fas fa-concierge-bell"></i> Servicios Disponibles</h4>
+                        <div class="servicios-lista">
+                            <span><i class="fas fa-wifi"></i> WI-FI Gratuito</span>
+                            <span><i class="fas fa-credit-card"></i> Tarjetas de crédito</span>
+                            <span><i class="fas fa-wheelchair"></i> Acceso adaptado</span>
+                            <span><i class="fas fa-star"></i> Programa de fidelidad</span>
+                            <span><i class="fas fa-child"></i> Adaptado para niños</span>
+                            <span><i class="fas fa-paw"></i> Mascotas bienvenidas</span>
+                        </div>
+                    </div>
+                    
+                    <div class="horario">
+                        <h4><i class="far fa-clock"></i> Horario de Apertura</h4>
+                        <p><strong>Lunes a Sábado:</strong> 09:30 - 14:00</p>
+                        <p><strong>Domingo:</strong> Cerrado</p>
+                        <p><small>* Día 1 de mayo cerrado</small></p>
+                    </div>
+
+                    <!-- Botão do WhatsApp ATUALIZADO -->
+                    <a href="https://wa.me/34605886004" class="btn-whatsapp-directo" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Agendar por WhatsApp
+                    </a>
+                </div>
+                
+                <div class="mapa-container">
+                    <!-- MAPA DO GOOGLE MAPS ATUALIZADO -->
+                    <div class="mapa-real">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2992.548108910846!2d2.1739119157394156!3d41.4039017792622!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4a3237b47b8a5%3A0x6c8b5b5e5e5e5e5e!2sCarrer%20Gran%20de%20Sant%20Andreu%2C%2062%2C%2008030%20Barcelona%2C%20Espa%C3%B1a!5e0!3m2!1ses!2ses!4v1641234567890!5m2!1ses!2ses" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Agendamiento -->
+    <section id="agendar" class="agendamiento">
+        <div class="container">
+            <h2 class="section-title">Reserva tu cita</h2>
+            <p class="section-subtitle">Elige el servicio, fecha y hora que prefieras</p>
+            <div class="agendamiento-container">
+                <div class="formulario-agenda">
+                   <form action="https://formspree.io/f/xlglnroa" method="POST" id="form-agenda">
+                    <input type="hidden" name="_subject" value="Nueva reserva - Cisealux Galants">
+                    <input type="hidden" name="_replyto" value="">    
+                    <div class="form-row">
+                            <div class="form-group">
+                                <label for="nombre"><i class="fas fa-user"></i> Nombre Completo</label>
+                                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="telefono"><i class="fas fa-phone"></i> Teléfono</label>
+                                <input type="tel" id="telefono" name="telefono" placeholder="Tu número de teléfono" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email"><i class="fas fa-envelope"></i> Email</label>
+                                <input type="email" id="email" name="email" placeholder="Tu correo electrónico" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="servicio"><i class="fas fa-scissors"></i> Servicio</label>
+                                <select id="servicio" name="servicio" required>
+                                    <option value="" disabled selected>Selecciona un servicio</option>
+                                    <option value="corte">Corte de Pelo</option>
+                                    <option value="coloracion">Coloración</option>
+                                    <option value="tratamiento">Tratamiento Capilar</option>
+                                    <option value="masaje">Masaje Relajante</option>
+                                    <option value="barberia">Servicio de Barbería</option>
+                                    <option value="manicura">Manicura / Pedicura</option>
+                                    <option value="completo">Servicio Completo</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="fecha"><i class="fas fa-calendar-alt"></i> Fecha</label>
+                                <input type="date" id="fecha" name="fecha" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="hora"><i class="fas fa-clock"></i> Hora</label>
+                                <select id="hora" name="hora" required>
+                                    <option value="" disabled selected>Selecciona una hora</option>
+                                    <option value="09:30">09:30</option>
+                                    <option value="10:00">10:00</option>
+                                    <option value="10:30">10:30</option>
+                                    <option value="11:00">11:00</option>
+                                    <option value="11:30">11:30</option>
+                                    <option value="12:00">12:00</option>
+                                    <option value="12:30">12:30</option>
+                                    <option value="13:00">13:00</option>
+                                    <option value="13:30">13:30</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="estilista"><i class="fas fa-user-tie"></i> Estilista Preferido (opcional)</label>
+                            <select id="estilista" name="estilista" style="background-color: white; color: #333;">
+                                <option value="" selected>Cualquier estilista</option>
+                                <option value="cristo">Cristo Vieira (Dueño)</option>
+                                <option value="fernando">Fernando Galvão</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="comentarios"><i class="fas fa-comment"></i> Comentarios o Peticiones Especiales</label>
+                            <textarea id="comentarios" name="comentarios" rows="3" placeholder="Déjanos cualquier detalle adicional..."></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">
+                            <i class="fas fa-calendar-check"></i> Confirmar Reserva
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="info-agenda">
+                    <h3><i class="fas fa-info-circle"></i> Información Importante</h3>
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Horario de Atención</h4>
+                            <p>Lunes a Sábado: 09:30 - 14:00</p>
+                            <p>Domingo: Cerrado</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <div>
+                            <h4>Política de Cancelación</h4>
+                            <p>Cancelaciones sin costo hasta 24 horas antes. Después aplican cargos.</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-user-friends"></i>
+                        <div>
+                            <h4>Atendemos a Grupos</h4>
+                            <p>¿Vienes con amigos o familia? Contáctanos para reservas grupales.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonio">
+                        <h4><i class="fas fa-quote-left"></i> Testimonio</h4>
+                        <p class="testimonio-texto">"Excelente atención y resultados. Mi cabello nunca había lucido tan bien. ¡Volveré sin duda!"</p>
+                        <p class="testimonio-autor">- María G., cliente habitual</p>
+                    </div>
+
+                    <!-- Botão para agendar via Booksy -->
+                    <a href="https://booksy.com/es-es/136783_ciseaux-galants_peluqueria_48863_barcelona?do=invite&_branch_match_id=1544150758857710068&utm_medium=merchant_customer_invite&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXT07J0UvKz88urtRLzs%2FVL8ovD3Q0qwxKjUyyrytKTUstKsrMS49PAooXpxbZOmcU5eemAgAbsAxXPAAAAA%3D%3D" 
+                       class="btn-booksy-directo" 
+                       target="_blank" 
+                       rel="noopener noreferrer">
+                       <i class="fas fa-calendar-alt"></i> Reservar en Booksy
+                    </a>
+                    
+                    <!-- Botão do WhatsApp -->
+                    <a href="https://wa.me/34605886004" class="btn-whatsapp-directo" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Agendar por WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal de Confirmación -->
+    <div id="modal-confirmacion" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-check-circle"></i> ¡Reserva Confirmada!</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="confirmacion-icon">
+                    <i class="fas fa-calendar-check"></i>
+                </div>
+                <p class="confirmacion-texto">Tu cita ha sido agendada exitosamente.</p>
+                <p>Te hemos enviado un correo de confirmación con todos los detalles.</p>
+                
+                <div class="detalles-reserva">
+                    <p><strong><i class="fas fa-user"></i> Cliente:</strong> <span id="reserva-nombre"></span></p>
+                    <p><strong><i class="fas fa-scissors"></i> Servicio:</strong> <span id="reserva-servicio"></span></p>
+                    <p><strong><i class="fas fa-calendar-alt"></i> Fecha:</strong> <span id="reserva-fecha"></span></p>
+                    <p><strong><i class="fas fa-clock"></i> Hora:</strong> <span id="reserva-hora"></span></p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-modal">Aceptar</button>
+                <button class="btn-modal-secondary" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                    <i class="fab fa-whatsapp"></i> Agregar al WhatsApp
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2><i class="fas fa-scissors"></i> Cisealux <span>Galants</span></h2>
+                    <p>Salón Unissex de Estilo y Elegancia en Barcelona</p>
+                    <div class="footer-social">
+                        <!-- INSTAGRAM ATUALIZADO - FACEBOOK E TIKTOK REMOVIDOS -->
+                        <a href="https://www.instagram.com/ciseauxbycristo/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <!-- LINK DO WHATSAPP NO FOOTER ATUALIZADO -->
+                        <a href="https://wa.me/34605886004" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+                        <li><a href="quienes-somos.html"><i class="fas fa-users"></i> Quiénes Somos</a></li>
+                        <li><a href="#servicios"><i class="fas fa-scissors"></i> Servicios</a></li>
+                        <li><a href="#testimonios"><i class="fas fa-star"></i> Testimonios</a></li>
+                        <li><a href="#localizacion"><i class="fas fa-map-marker-alt"></i> Localización</a></li>
+                        <li><a href="#agendar"><i class="fas fa-calendar-alt"></i> Agendar Cita</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contacto">
+                    <h3>Contacto</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Carrer Gran de Sant Andreu, 62, 08030, Barcelona</p>
+                    <!-- NÚMERO DE TELEFONE ATUALIZADO -->
+                    <p><i class="fas fa-phone"></i> <a href="tel:+34605886004">+34 605 886 004</a></p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:info@cisealuxgalants.com">info@cisealuxgalants.com</a></p>
+                    <p><i class="fas fa-clock"></i> Lunes a Sábado: 09:30-14:00</p>
+                </div>
+                <div class="footer-newsletter">
+                    <h3>Newsletter</h3>
+                    <p>Recibe promociones exclusivas y tips de estilo en tu email.</p>
+                    <form id="newsletter-form">
+                        <input type="email" placeholder="Tu email" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 Cisealux Galants. Todos los derechos reservados.</p>
+                <p>Desarrollado por GM Business para amantes del estilo</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/accordion-js@3.3.4/dist/accordion.min.js"></script>
+    <script src="scripts/script.js"></script>
+</body>
+</html>
