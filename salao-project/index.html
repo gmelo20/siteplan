@@ -46,6 +46,7 @@
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             transition: transform 0.3s ease;
+            border-left: 5px solid #8a6d3b;
         }
 
         .testimonio-card:hover {
@@ -94,8 +95,8 @@
             color: #555;
             font-style: italic;
             margin-bottom: 20px;
-            padding-left: 20px;
-            border-left: 3px solid #8a6d3b;
+            padding-left: 0;
+            border-left: none;
         }
 
         /* Estilos para o formulário de agendamento */
@@ -261,7 +262,6 @@
         <div class="container">
             <div class="logo-container">
                 <a href="index.html" class="logo-img">
-                    <!-- LOGO ATUALIZADO -->
                     <img src="images/LOGO.png" alt="Cisealux Galants Logo">
                 </a>
                 <div class="logo-text">
@@ -291,16 +291,12 @@
             <div class="hero-content">
                 <h2>Tu estilo, nuestra pasión</h2>
                 <p>En Cisealux Galants nos especializamos en realzar tu belleza natural con cortes, coloración y tratamientos de última tendencia. Un espacio donde la elegancia y la comodidad se encuentran.</p>
-                <!-- LINK DO BOOKSY ATUALIZADO -->
                 <a href="https://booksy.com/es-es/136783_ciseaux-galants_peluqueria_48863_barcelona?do=invite&_branch_match_id=1544150758857710068&utm_medium=merchant_customer_invite&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXT07J0UvKz88urtRLzs%2FVL8ovD3Q0qwxKjUyyrytKTUstKsrMS49PAooXpxbZOmcU5eemAgAbsAxXPAAAAA%3D%3D" 
-                   class="btn-hero" 
-                   target="_blank" 
-                   rel="noopener noreferrer">
+                   class="btn-hero" target="_blank" rel="noopener noreferrer">
                    Reserva tu cita ahora
                 </a>
                 <div class="hero-buttons">
                     <a href="quienes-somos.html" class="btn-secondary">Conoce al equipo</a>
-                    <!-- BOTÃO CONTÁCTANOS REMOVIDO -->
                 </div>
             </div>
             <div class="hero-image">
@@ -324,58 +320,80 @@
             <p class="section-subtitle">Ofrecemos una amplia gama de servicios para hombres y mujeres</p>
             
             <div class="accordion">
-                <!-- MASAJES -->
-                <div class="accordion__item">
-                    <div class="accordion__header">
-                        <h3><i class="fas fa-spa"></i> MASAJES <span>1 servicio</span></h3>
-                        <span class="accordion__icon"><i class="fas fa-chevron-down"></i></span>
+  <!-- MASAJES (2 servicios) -->
+<div class="accordion__item">
+    <div class="accordion__header">
+        <h3><i class="fas fa-spa"></i> MASAJES <span>2 servicios</span></h3>
+        <span class="accordion__icon"><i class="fas fa-chevron-down"></i></span>
+    </div>
+    <div class="accordion__content">
+        <div class="servicios-carousel">
+            <div class="carousel-container">
+                <div class="carousel-track">
+                    <!-- 1. Masaje 30' (existente) -->
+                    <div class="servicio-carousel-item">
+                        <div class="servicio-info">
+                            <h4>Masaje 30' - Masaje relajante</h4>
+                            <p>30 minutos de masaje relajante para aliviar tensiones y estrés.</p>
+                            <div class="servicio-precio">
+                                <span class="precio-actual">30,00 €</span>
+                            </div>
+                            <div class="tiempo">
+                                <i class="far fa-clock"></i> 30 minutos
+                            </div>
+                        </div>
+                        <div class="carousel-buttons">
+                            <button class="btn-reservar">Reservar</button>
+                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                <i class="fab fa-whatsapp"></i>
+                            </button>
+                        </div>
                     </div>
-                    <div class="accordion__content">
-                        <div class="servicios-carousel">
-                            <div class="carousel-container">
-                                <div class="carousel-track">
-                                    <!-- Masaje 30' -->
-                                    <div class="servicio-carousel-item">
-                                        <div class="servicio-info">
-                                            <h4>Masaje 30' - Masaje relajante</h4>
-                                            <p>30 minutos de masaje relajante para aliviar tensiones y estrés.</p>
-                                            <div class="servicio-precio">
-                                                <span class="precio-actual">30,00 €</span>
-                                            </div>
-                                            <div class="tiempo">
-                                                <i class="far fa-clock"></i> 30 minutos
-                                            </div>
-                                        </div>
-                                        <div class="carousel-buttons">
-                                            <button class="btn-reservar">Reservar</button>
-                                            <!-- LINK DO WHATSAPP ATUALIZADO -->
-                                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
-                                                <i class="fab fa-whatsapp"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <button class="carousel-arrow prev"><i class="fas fa-chevron-left"></i></button>
-                                <button class="carousel-arrow next"><i class="fas fa-chevron-right"></i></button>
+                    <!-- 2. Masaje relajante 50 min (novo) -->
+                    <div class="servicio-carousel-item">
+                        <div class="servicio-info">
+                            <h4>Masaje relajante 50 min</h4>
+                            <p>Masaje relajante con aceite, 50 minutos de puro bienestar.</p>
+                            <div class="servicio-precio">
+                                <span class="precio-actual">45,00 €</span>
+                                <span class="precio-antiguo">50,00 €</span>
+                                <span class="descuento">-10%</span>
                             </div>
-                            <div class="carousel-nav">
-                                <span class="carousel-dot active"></span>
+                            <div class="tiempo">
+                                <i class="far fa-clock"></i> 50 minutos
                             </div>
+                            <p class="precio-info">Precio más bajo en 30 días, antes del descuento: 50,00 €</p>
+                            <p class="ahorro">Ahorra hasta un 10%</p>
+                        </div>
+                        <div class="carousel-buttons">
+                            <button class="btn-reservar">Reservar</button>
+                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                <i class="fab fa-whatsapp"></i>
+                            </button>
                         </div>
                     </div>
                 </div>
-
-                <!-- CORTE -->
+                <button class="carousel-arrow prev"><i class="fas fa-chevron-left"></i></button>
+                <button class="carousel-arrow next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="carousel-nav">
+                <span class="carousel-dot active"></span>
+                <span class="carousel-dot"></span>
+            </div>
+        </div>
+    </div>
+</div>
+                <!-- CORTE (8 servicios) -->
                 <div class="accordion__item">
                     <div class="accordion__header">
-                        <h3><i class="fas fa-cut"></i> CORTE <span>7 servicios</span></h3>
+                        <h3><i class="fas fa-cut"></i> CORTE <span>8 servicios</span></h3>
                         <span class="accordion__icon"><i class="fas fa-chevron-down"></i></span>
                     </div>
                     <div class="accordion__content">
                         <div class="servicios-carousel">
                             <div class="carousel-container">
                                 <div class="carousel-track">
-                                    <!-- Corte femenino -->
+                                    <!-- 1. Corte femenino -->
                                     <div class="servicio-carousel-item">
                                         <div class="servicio-info">
                                             <h4>Corte femenino</h4>
@@ -393,13 +411,12 @@
                                         </div>
                                         <div class="carousel-buttons">
                                             <button class="btn-reservar">Reservar</button>
-                                            <!-- LINK DO WHATSAPP ATUALIZADO -->
                                             <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
                                                 <i class="fab fa-whatsapp"></i>
                                             </button>
                                         </div>
                                     </div>
-                                    <!-- Lavar y cortar -->
+                                    <!-- 2. Lavar y cortar -->
                                     <div class="servicio-carousel-item">
                                         <div class="servicio-info">
                                             <h4>Lavar y cortar</h4>
@@ -417,7 +434,144 @@
                                         </div>
                                         <div class="carousel-buttons">
                                             <button class="btn-reservar">Reservar</button>
-                                            <!-- LINK DO WHATSAPP ATUALIZADO -->
+                                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                                <i class="fab fa-whatsapp"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <!-- 3. Corte masculino Ciseaux tijera y maquina -->
+                                    <div class="servicio-carousel-item">
+                                        <div class="servicio-info">
+                                            <h4>Corte masculino Ciseaux tijera y maquina</h4>
+                                            <p>Corte con tijeras o máquina - incluso lavar cabeza</p>
+                                            <div class="servicio-precio">
+                                                <span class="precio-actual">13,50 €</span>
+                                                <span class="precio-antiguo">15,00 €</span>
+                                                <span class="descuento">-10%</span>
+                                            </div>
+                                            <div class="tiempo">
+                                                <i class="far fa-clock"></i> 20 minutos
+                                            </div>
+                                            <p class="precio-info">Precio más bajo en 30 días, antes del descuento: 15,00 €</p>
+                                            <p class="ahorro">Ahorra hasta un 10%</p>
+                                        </div>
+                                        <div class="carousel-buttons">
+                                            <button class="btn-reservar">Reservar</button>
+                                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                                <i class="fab fa-whatsapp"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <!-- 4. Corte infantil hasta 12 años -->
+                                    <div class="servicio-carousel-item">
+                                        <div class="servicio-info">
+                                            <h4>Corte infantil hasta 12 años</h4>
+                                            <p>Corte especial para niños hasta 12 años</p>
+                                            <div class="servicio-precio">
+                                                <span class="precio-actual">10,80 €</span>
+                                                <span class="precio-antiguo">12,00 €</span>
+                                                <span class="descuento">-10%</span>
+                                            </div>
+                                            <div class="tiempo">
+                                                <i class="far fa-clock"></i> 30 minutos
+                                            </div>
+                                            <p class="precio-info">Precio más bajo en 30 días, antes del descuento: 12,00 €</p>
+                                            <p class="ahorro">Ahorra hasta un 10%</p>
+                                        </div>
+                                        <div class="carousel-buttons">
+                                            <button class="btn-reservar">Reservar</button>
+                                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                                <i class="fab fa-whatsapp"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <!-- 5. Corte flequillo -->
+                                    <div class="servicio-carousel-item">
+                                        <div class="servicio-info">
+                                            <h4>Corte flequillo</h4>
+                                            <p>Corte de flequillo</p>
+                                            <div class="servicio-precio">
+                                                <span class="precio-actual">3,60 €</span>
+                                                <span class="precio-antiguo">4,00 €</span>
+                                                <span class="descuento">-10%</span>
+                                            </div>
+                                            <div class="tiempo">
+                                                <i class="far fa-clock"></i> 10 minutos
+                                            </div>
+                                            <p class="precio-info">Precio más bajo en 30 días, antes del descuento: 4,00 €</p>
+                                            <p class="ahorro">Ahorra hasta un 10%</p>
+                                        </div>
+                                        <div class="carousel-buttons">
+                                            <button class="btn-reservar">Reservar</button>
+                                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                                <i class="fab fa-whatsapp"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <!-- 6. Corte masculino tondeuse solo maquina -->
+                                    <div class="servicio-carousel-item">
+                                        <div class="servicio-info">
+                                            <h4>Corte masculino tondeuse solo máquina</h4>
+                                            <p>Raspar la cabeza con máquina</p>
+                                            <div class="servicio-precio">
+                                                <span class="precio-actual">7,20 €</span>
+                                                <span class="precio-antiguo">8,00 €</span>
+                                                <span class="descuento">-10%</span>
+                                            </div>
+                                            <div class="tiempo">
+                                                <i class="far fa-clock"></i> 10 minutos
+                                            </div>
+                                            <p class="precio-info">Precio más bajo en 30 días, antes del descuento: 8,00 €</p>
+                                            <p class="ahorro">Ahorra hasta un 10%</p>
+                                        </div>
+                                        <div class="carousel-buttons">
+                                            <button class="btn-reservar">Reservar</button>
+                                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                                <i class="fab fa-whatsapp"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <!-- 7. Corte masculino design y ceja design -->
+                                    <div class="servicio-carousel-item">
+                                        <div class="servicio-info">
+                                            <h4>Corte masculino design y ceja design</h4>
+                                            <p>Diseño de barba y cejas</p>
+                                            <div class="servicio-precio">
+                                                <span class="precio-actual">22,50 €</span>
+                                                <span class="precio-antiguo">25,00 €</span>
+                                                <span class="descuento">-10%</span>
+                                            </div>
+                                            <div class="tiempo">
+                                                <i class="far fa-clock"></i> 30 minutos
+                                            </div>
+                                            <p class="precio-info">Precio más bajo en 30 días, antes del descuento: 25,00 €</p>
+                                            <p class="ahorro">Ahorra hasta un 10%</p>
+                                        </div>
+                                        <div class="carousel-buttons">
+                                            <button class="btn-reservar">Reservar</button>
+                                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                                <i class="fab fa-whatsapp"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <!-- 8. Corte Masculino Jubilados -->
+                                    <div class="servicio-carousel-item">
+                                        <div class="servicio-info">
+                                            <h4>Corte Masculino Jubilados</h4>
+                                            <p>Oferta especial para jubilados</p>
+                                            <div class="servicio-precio">
+                                                <span class="precio-actual">7,20 €</span>
+                                                <span class="precio-antiguo">8,00 €</span>
+                                                <span class="descuento">-10%</span>
+                                            </div>
+                                            <div class="tiempo">
+                                                <i class="far fa-clock"></i> 30 minutos
+                                            </div>
+                                            <p class="precio-info">Precio más bajo en 30 días, antes del descuento: 8,00 €</p>
+                                            <p class="ahorro">Ahorra hasta un 10%</p>
+                                        </div>
+                                        <div class="carousel-buttons">
+                                            <button class="btn-reservar">Reservar</button>
                                             <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
                                                 <i class="fab fa-whatsapp"></i>
                                             </button>
@@ -430,12 +584,18 @@
                             <div class="carousel-nav">
                                 <span class="carousel-dot active"></span>
                                 <span class="carousel-dot"></span>
+                                <span class="carousel-dot"></span>
+                                <span class="carousel-dot"></span>
+                                <span class="carousel-dot"></span>
+                                <span class="carousel-dot"></span>
+                                <span class="carousel-dot"></span>
+                                <span class="carousel-dot"></span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- COLOR -->
+                <!-- COLOR (20 servicios) -->
                 <div class="accordion__item">
                     <div class="accordion__header">
                         <h3><i class="fas fa-paint-brush"></i> COLOR <span>20 servicios</span></h3>
@@ -445,7 +605,7 @@
                         <div class="servicios-carousel">
                             <div class="carousel-container">
                                 <div class="carousel-track">
-                                    <!-- Color raíz -->
+                                    <!-- 1. Color raíz -->
                                     <div class="servicio-carousel-item">
                                         <div class="servicio-info">
                                             <h4>Color raíz</h4>
@@ -463,13 +623,12 @@
                                         </div>
                                         <div class="carousel-buttons">
                                             <button class="btn-reservar">Reservar</button>
-                                            <!-- LINK DO WHATSAPP ATUALIZADO -->
                                             <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
                                                 <i class="fab fa-whatsapp"></i>
                                             </button>
                                         </div>
                                     </div>
-                                    <!-- Matiz | baño de color largo -->
+                                    <!-- 2. Matiz | baño de color largo -->
                                     <div class="servicio-carousel-item">
                                         <div class="servicio-info">
                                             <h4>Matiz | baño de color largo</h4>
@@ -487,13 +646,12 @@
                                         </div>
                                         <div class="carousel-buttons">
                                             <button class="btn-reservar">Reservar</button>
-                                            <!-- LINK DO WHATSAPP ATUALIZADO -->
                                             <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
                                                 <i class="fab fa-whatsapp"></i>
                                             </button>
                                         </div>
                                     </div>
-                                    <!-- Color completo corto -->
+                                    <!-- 3. Color completo corto -->
                                     <div class="servicio-carousel-item">
                                         <div class="servicio-info">
                                             <h4>Color completo corto</h4>
@@ -511,7 +669,393 @@
                                         </div>
                                         <div class="carousel-buttons">
                                             <button class="btn-reservar">Reservar</button>
-                                            <!-- LINK DO WHATSAPP ATUALIZADO -->
+                                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                                <i class="fab fa-whatsapp"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <!-- 4. Color frontal -->
+                                    <div class="servicio-carousel-item">
+                                        <div class="servicio-info">
+                                            <h4>Color frontal</h4>
+                                            <p>Coloración solo en la parte frontal del cabello.</p>
+                                            <div class="servicio-precio">
+                                                <span class="precio-actual">13,50 €</span>
+                                                <span class="precio-antiguo">15,00 €</span>
+                                                <span class="descuento">-10%</span>
+                                            </div>
+                                            <div class="tiempo">
+                                                <i class="far fa-clock"></i> 30 minutos
+                                            </div>
+                                            <p class="precio-info">Precio más bajo en 30 días, antes del descuento: 15,00 €</p>
+                                            <p class="ahorro">Ahorra hasta un 10%</p>
+                                        </div>
+                                        <div class="carousel-buttons">
+                                            <button class="btn-reservar">Reservar</button>
+                                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                                <i class="fab fa-whatsapp"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <!-- 5. Color completo medio -->
+                                    <div class="servicio-carousel-item">
+                                        <div class="servicio-info">
+                                            <h4>Color completo medio</h4>
+                                            <p>Coloración completa para cabello medio.</p>
+                                            <div class="servicio-precio">
+                                                <span class="precio-actual">36,00 €</span>
+                                                <span class="precio-antiguo">40,00 €</span>
+                                                <span class="descuento">-10%</span>
+                                            </div>
+                                            <div class="tiempo">
+                                                <i class="far fa-clock"></i> 40 minutos
+                                            </div>
+                                            <p class="precio-info">Precio más bajo en 30 días, antes del descuento: 40,00 €</p>
+                                            <p class="ahorro">Ahorra hasta un 10%</p>
+                                        </div>
+                                        <div class="carousel-buttons">
+                                            <button class="btn-reservar">Reservar</button>
+                                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                                <i class="fab fa-whatsapp"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <!-- 6. Color completo largo -->
+                                    <div class="servicio-carousel-item">
+                                        <div class="servicio-info">
+                                            <h4>Color completo largo</h4>
+                                            <p>Coloración completa para cabello largo.</p>
+                                            <div class="servicio-precio">
+                                                <span class="precio-actual">45,00 €</span>
+                                                <span class="precio-antiguo">50,00 €</span>
+                                                <span class="descuento">-10%</span>
+                                            </div>
+                                            <div class="tiempo">
+                                                <i class="far fa-clock"></i> 40 minutos
+                                            </div>
+                                            <p class="precio-info">Precio más bajo en 30 días, antes del descuento: 50,00 €</p>
+                                            <p class="ahorro">Ahorra hasta un 10%</p>
+                                        </div>
+                                        <div class="carousel-buttons">
+                                            <button class="btn-reservar">Reservar</button>
+                                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                                <i class="fab fa-whatsapp"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <!-- 7. Color barba completo -->
+                                    <div class="servicio-carousel-item">
+                                        <div class="servicio-info">
+                                            <h4>Color barba completo</h4>
+                                            <p>Coloración completa para barba.</p>
+                                            <div class="servicio-precio">
+                                                <span class="precio-actual">18,00 €</span>
+                                                <span class="precio-antiguo">20,00 €</span>
+                                                <span class="descuento">-10%</span>
+                                            </div>
+                                            <div class="tiempo">
+                                                <i class="far fa-clock"></i> 30 minutos
+                                            </div>
+                                            <p class="precio-info">Precio más bajo en 30 días, antes del descuento: 20,00 €</p>
+                                            <p class="ahorro">Ahorra hasta un 10%</p>
+                                        </div>
+                                        <div class="carousel-buttons">
+                                            <button class="btn-reservar">Reservar</button>
+                                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                                <i class="fab fa-whatsapp"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <!-- 8. Matiz | baño de color medio -->
+                                    <div class="servicio-carousel-item">
+                                        <div class="servicio-info">
+                                            <h4>Matiz | baño de color medio</h4>
+                                            <p>Baño de color para cabello medio.</p>
+                                            <div class="servicio-precio">
+                                                <span class="precio-actual">22,50 €</span>
+                                                <span class="precio-antiguo">25,00 €</span>
+                                                <span class="descuento">-10%</span>
+                                            </div>
+                                            <div class="tiempo">
+                                                <i class="far fa-clock"></i> 40 minutos
+                                            </div>
+                                            <p class="precio-info">Precio más bajo en 30 días, antes del descuento: 25,00 €</p>
+                                            <p class="ahorro">Ahorra hasta un 10%</p>
+                                        </div>
+                                        <div class="carousel-buttons">
+                                            <button class="btn-reservar">Reservar</button>
+                                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                                <i class="fab fa-whatsapp"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <!-- 9. Decoloración corto -->
+                                    <div class="servicio-carousel-item">
+                                        <div class="servicio-info">
+                                            <h4>Decoloración corto</h4>
+                                            <p>Decoloración para cabello corto.</p>
+                                            <div class="servicio-precio">
+                                                <span class="precio-actual">36,00 €</span>
+                                                <span class="precio-antiguo">40,00 €</span>
+                                                <span class="descuento">-10%</span>
+                                            </div>
+                                            <div class="tiempo">
+                                                <i class="far fa-clock"></i> 30 minutos
+                                            </div>
+                                            <p class="precio-info">Precio más bajo en 30 días, antes del descuento: 40,00 €</p>
+                                            <p class="ahorro">Ahorra hasta un 10%</p>
+                                        </div>
+                                        <div class="carousel-buttons">
+                                            <button class="btn-reservar">Reservar</button>
+                                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                                <i class="fab fa-whatsapp"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <!-- 10. Decoloración medio -->
+                                    <div class="servicio-carousel-item">
+                                        <div class="servicio-info">
+                                            <h4>Decoloración medio</h4>
+                                            <p>Decoloración para cabello medio.</p>
+                                            <div class="servicio-precio">
+                                                <span class="precio-actual">45,00 €</span>
+                                                <span class="precio-antiguo">50,00 €</span>
+                                                <span class="descuento">-10%</span>
+                                            </div>
+                                            <div class="tiempo">
+                                                <i class="far fa-clock"></i> 30 minutos
+                                            </div>
+                                            <p class="precio-info">Precio más bajo en 30 días, antes del descuento: 50,00 €</p>
+                                            <p class="ahorro">Ahorra hasta un 10%</p>
+                                        </div>
+                                        <div class="carousel-buttons">
+                                            <button class="btn-reservar">Reservar</button>
+                                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                                <i class="fab fa-whatsapp"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <!-- 11. Decoloración largo -->
+                                    <div class="servicio-carousel-item">
+                                        <div class="servicio-info">
+                                            <h4>Decoloración largo</h4>
+                                            <p>Decoloración para cabello largo.</p>
+                                            <div class="servicio-precio">
+                                                <span class="precio-actual">58,50 €</span>
+                                                <span class="precio-antiguo">65,00 €</span>
+                                                <span class="descuento">-10%</span>
+                                            </div>
+                                            <div class="tiempo">
+                                                <i class="far fa-clock"></i> 30 minutos
+                                            </div>
+                                            <p class="precio-info">Precio más bajo en 30 días, antes del descuento: 65,00 €</p>
+                                            <p class="ahorro">Ahorra hasta un 10%</p>
+                                        </div>
+                                        <div class="carousel-buttons">
+                                            <button class="btn-reservar">Reservar</button>
+                                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                                <i class="fab fa-whatsapp"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <!-- 12. Combo samba no pé corto -->
+                                    <div class="servicio-carousel-item">
+                                        <div class="servicio-info">
+                                            <h4>Combo samba no pé corto</h4>
+                                            <p>Cortar, color raíz y peinar.</p>
+                                            <div class="servicio-precio">
+                                                <span class="precio-actual">45,00 €</span>
+                                                <span class="precio-antiguo">50,00 €</span>
+                                                <span class="descuento">-10%</span>
+                                            </div>
+                                            <div class="tiempo">
+                                                <i class="far fa-clock"></i> 45 minutos
+                                            </div>
+                                            <p class="precio-info">Precio más bajo en 30 días, antes del descuento: 50,00 €</p>
+                                            <p class="ahorro">Ahorra hasta un 10%</p>
+                                        </div>
+                                        <div class="carousel-buttons">
+                                            <button class="btn-reservar">Reservar</button>
+                                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                                <i class="fab fa-whatsapp"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <!-- 13. Combo samba no pé medio -->
+                                    <div class="servicio-carousel-item">
+                                        <div class="servicio-info">
+                                            <h4>Combo samba no pé medio</h4>
+                                            <p>Cortar, color raíz y peinar.</p>
+                                            <div class="servicio-precio">
+                                                <span class="precio-actual">53,10 €</span>
+                                                <span class="precio-antiguo">59,00 €</span>
+                                                <span class="descuento">-10%</span>
+                                            </div>
+                                            <div class="tiempo">
+                                                <i class="far fa-clock"></i> 45 minutos
+                                            </div>
+                                            <p class="precio-info">Precio más bajo en 30 días, antes del descuento: 59,00 €</p>
+                                            <p class="ahorro">Ahorra hasta un 10%</p>
+                                        </div>
+                                        <div class="carousel-buttons">
+                                            <button class="btn-reservar">Reservar</button>
+                                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                                <i class="fab fa-whatsapp"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <!-- 14. Combo samba no pé largo -->
+                                    <div class="servicio-carousel-item">
+                                        <div class="servicio-info">
+                                            <h4>Combo samba no pé largo</h4>
+                                            <p>Cortar, color raíz y peinar.</p>
+                                            <div class="servicio-precio">
+                                                <span class="precio-actual">54,90 €</span>
+                                                <span class="precio-antiguo">61,00 €</span>
+                                                <span class="descuento">-10%</span>
+                                            </div>
+                                            <div class="tiempo">
+                                                <i class="far fa-clock"></i> 45 minutos
+                                            </div>
+                                            <p class="precio-info">Precio más bajo en 30 días, antes del descuento: 61,00 €</p>
+                                            <p class="ahorro">Ahorra hasta un 10%</p>
+                                        </div>
+                                        <div class="carousel-buttons">
+                                            <button class="btn-reservar">Reservar</button>
+                                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                                <i class="fab fa-whatsapp"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <!-- 15. Combo musa do samba corto -->
+                                    <div class="servicio-carousel-item">
+                                        <div class="servicio-info">
+                                            <h4>Combo musa do samba corto</h4>
+                                            <p>Cortar, color completo y peinar.</p>
+                                            <div class="servicio-precio">
+                                                <span class="precio-actual">60,00 €</span>
+                                                <!-- <span class="precio-antiguo">60,00 €</span> -->
+                                                <!-- <span class="descuento">-10%</span> -->
+                                            </div>
+                                            <div class="tiempo">
+                                                <i class="far fa-clock"></i> 45 minutos
+                                            </div>
+                                            <p class="precio-info">Precio más bajo en 30 días, antes del descuento: 60,00 €</p>
+                                            <p class="ahorro">Ahorra hasta un 10%</p>
+                                        </div>
+                                        <div class="carousel-buttons">
+                                            <button class="btn-reservar">Reservar</button>
+                                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                                <i class="fab fa-whatsapp"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <!-- 16. Combo musa do samba medio -->
+                                    <div class="servicio-carousel-item">
+                                        <div class="servicio-info">
+                                            <h4>Combo musa do samba medio</h4>
+                                            <p>Cortar, color completo y peinar.</p>
+                                            <div class="servicio-precio">
+                                                <span class="precio-actual">70,00 €</span>
+                                            </div>
+                                            <div class="tiempo">
+                                                <i class="far fa-clock"></i> 45 minutos
+                                            </div>
+                                            <p class="precio-info">Precio más bajo en 30 días, antes del descuento: 70,00 €</p>
+                                            <p class="ahorro">Ahorra hasta un 10%</p>
+                                        </div>
+                                        <div class="carousel-buttons">
+                                            <button class="btn-reservar">Reservar</button>
+                                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                                <i class="fab fa-whatsapp"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <!-- 17. Combo musa do samba largo -->
+                                    <div class="servicio-carousel-item">
+                                        <div class="servicio-info">
+                                            <h4>Combo musa do samba largo</h4>
+                                            <p>Cortar, color completo y peinar.</p>
+                                            <div class="servicio-precio">
+                                                <span class="precio-actual">80,00 €</span>
+                                            </div>
+                                            <div class="tiempo">
+                                                <i class="far fa-clock"></i> 45 minutos
+                                            </div>
+                                            <p class="precio-info">Precio más bajo en 30 días, antes del descuento: 80,00 €</p>
+                                            <p class="ahorro">Ahorra hasta un 10%</p>
+                                        </div>
+                                        <div class="carousel-buttons">
+                                            <button class="btn-reservar">Reservar</button>
+                                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                                <i class="fab fa-whatsapp"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <!-- 18. Cejas (teñir) -->
+                                    <div class="servicio-carousel-item">
+                                        <div class="servicio-info">
+                                            <h4>Cejas</h4>
+                                            <p>Teñir cejas simples aplicación al lavado.</p>
+                                            <div class="servicio-precio">
+                                                <span class="precio-actual">4,50 €</span>
+                                                <span class="precio-antiguo">5,00 €</span>
+                                                <span class="descuento">-10%</span>
+                                            </div>
+                                            <div class="tiempo">
+                                                <i class="far fa-clock"></i> 15 minutos
+                                            </div>
+                                            <p class="precio-info">Precio más bajo en 30 días, antes del descuento: 5,00 €</p>
+                                            <p class="ahorro">Ahorra hasta un 10%</p>
+                                        </div>
+                                        <div class="carousel-buttons">
+                                            <button class="btn-reservar">Reservar</button>
+                                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                                <i class="fab fa-whatsapp"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <!-- 19. APLICACION TINTE MEDIO (tinte aportado cliente) -->
+                                    <div class="servicio-carousel-item">
+                                        <div class="servicio-info">
+                                            <h4>Aplicación tinte medio</h4>
+                                            <p>Aplicación de color (con tinte traído por el cliente).</p>
+                                            <div class="servicio-precio">
+                                                <span class="precio-actual">18,00 €</span>
+                                                <span class="precio-antiguo">20,00 €</span>
+                                                <span class="descuento">-10%</span>
+                                            </div>
+                                            <div class="tiempo">
+                                                <i class="far fa-clock"></i> 30 minutos
+                                            </div>
+                                            <p class="precio-info">Precio más bajo en 30 días, antes del descuento: 20,00 €</p>
+                                            <p class="ahorro">Ahorra hasta un 10%</p>
+                                        </div>
+                                        <div class="carousel-buttons">
+                                            <button class="btn-reservar">Reservar</button>
+                                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                                <i class="fab fa-whatsapp"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <!-- 20. Matiz baño de color corto -->
+                                    <div class="servicio-carousel-item">
+                                        <div class="servicio-info">
+                                            <h4>Matiz | baño de color corto</h4>
+                                            <p>Baño de color para cabello corto.</p>
+                                            <div class="servicio-precio">
+                                                <span class="precio-actual">22,50 €</span>
+                                                <span class="precio-antiguo">25,00 €</span>
+                                                <span class="descuento">-10%</span>
+                                            </div>
+                                            <div class="tiempo">
+                                                <i class="far fa-clock"></i> 35 minutos
+                                            </div>
+                                            <p class="precio-info">Precio más bajo en 30 días, antes del descuento: 25,00 €</p>
+                                            <p class="ahorro">Ahorra hasta un 10%</p>
+                                        </div>
+                                        <div class="carousel-buttons">
+                                            <button class="btn-reservar">Reservar</button>
                                             <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
                                                 <i class="fab fa-whatsapp"></i>
                                             </button>
@@ -522,7 +1066,25 @@
                                 <button class="carousel-arrow next"><i class="fas fa-chevron-right"></i></button>
                             </div>
                             <div class="carousel-nav">
+                                <!-- 20 dots -->
                                 <span class="carousel-dot active"></span>
+                                <span class="carousel-dot"></span>
+                                <span class="carousel-dot"></span>
+                                <span class="carousel-dot"></span>
+                                <span class="carousel-dot"></span>
+                                <span class="carousel-dot"></span>
+                                <span class="carousel-dot"></span>
+                                <span class="carousel-dot"></span>
+                                <span class="carousel-dot"></span>
+                                <span class="carousel-dot"></span>
+                                <span class="carousel-dot"></span>
+                                <span class="carousel-dot"></span>
+                                <span class="carousel-dot"></span>
+                                <span class="carousel-dot"></span>
+                                <span class="carousel-dot"></span>
+                                <span class="carousel-dot"></span>
+                                <span class="carousel-dot"></span>
+                                <span class="carousel-dot"></span>
                                 <span class="carousel-dot"></span>
                                 <span class="carousel-dot"></span>
                             </div>
@@ -530,17 +1092,109 @@
                     </div>
                 </div>
 
-                <!-- LAVADO Y PEINADO -->
+                <!-- LAVADO Y PEINADO (16 servicios) -->
                 <div class="accordion__item">
                     <div class="accordion__header">
-                        <h3><i class="fas fa-shower"></i> LAVADO Y PEINADO <span>14 servicios</span></h3>
+                        <h3><i class="fas fa-shower"></i> LAVADO Y PEINADO <span>16 servicios</span></h3>
                         <span class="accordion__icon"><i class="fas fa-chevron-down"></i></span>
                     </div>
                     <div class="accordion__content">
                         <div class="servicios-carousel">
                             <div class="carousel-container">
                                 <div class="carousel-track">
-                                    <!-- Lavar y peinar corto -->
+                                    <!-- 1. Plancha adicional corto -->
+                                    <div class="servicio-carousel-item">
+                                        <div class="servicio-info">
+                                            <h4>Plancha adicional corto</h4>
+                                            <p>Añadir plancha al peinado corto.</p>
+                                            <div class="servicio-precio">
+                                                <span class="precio-actual">4,50 €</span>
+                                                <span class="precio-antiguo">5,00 €</span>
+                                                <span class="descuento">-10%</span>
+                                            </div>
+                                            <div class="tiempo">
+                                                <i class="far fa-clock"></i> 15 minutos
+                                            </div>
+                                            <p class="precio-info">Precio más bajo en 30 días, antes del descuento: 5,00 €</p>
+                                            <p class="ahorro">Ahorra hasta un 10%</p>
+                                        </div>
+                                        <div class="carousel-buttons">
+                                            <button class="btn-reservar">Reservar</button>
+                                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                                <i class="fab fa-whatsapp"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <!-- 2. Plancha adicional medio -->
+                                    <div class="servicio-carousel-item">
+                                        <div class="servicio-info">
+                                            <h4>Plancha adicional medio</h4>
+                                            <p>Añadir plancha al peinado medio.</p>
+                                            <div class="servicio-precio">
+                                                <span class="precio-actual">9,00 €</span>
+                                                <span class="precio-antiguo">10,00 €</span>
+                                                <span class="descuento">-10%</span>
+                                            </div>
+                                            <div class="tiempo">
+                                                <i class="far fa-clock"></i> 15 minutos
+                                            </div>
+                                            <p class="precio-info">Precio más bajo en 30 días, antes del descuento: 10,00 €</p>
+                                            <p class="ahorro">Ahorra hasta un 10%</p>
+                                        </div>
+                                        <div class="carousel-buttons">
+                                            <button class="btn-reservar">Reservar</button>
+                                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                                <i class="fab fa-whatsapp"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <!-- 3. Plancha adicional largo -->
+                                    <div class="servicio-carousel-item">
+                                        <div class="servicio-info">
+                                            <h4>Plancha adicional largo</h4>
+                                            <p>Añadir plancha al peinado largo.</p>
+                                            <div class="servicio-precio">
+                                                <span class="precio-actual">13,50 €</span>
+                                                <span class="precio-antiguo">15,00 €</span>
+                                                <span class="descuento">-10%</span>
+                                            </div>
+                                            <div class="tiempo">
+                                                <i class="far fa-clock"></i> 15 minutos
+                                            </div>
+                                            <p class="precio-info">Precio más bajo en 30 días, antes del descuento: 15,00 €</p>
+                                            <p class="ahorro">Ahorra hasta un 10%</p>
+                                        </div>
+                                        <div class="carousel-buttons">
+                                            <button class="btn-reservar">Reservar</button>
+                                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                                <i class="fab fa-whatsapp"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <!-- 4. Lavar y secar al aire -->
+                                    <div class="servicio-carousel-item">
+                                        <div class="servicio-info">
+                                            <h4>Lavar y secar al aire</h4>
+                                            <p>Lavado y secado natural.</p>
+                                            <div class="servicio-precio">
+                                                <span class="precio-actual">10,71 €</span>
+                                                <span class="precio-antiguo">11,90 €</span>
+                                                <span class="descuento">-10%</span>
+                                            </div>
+                                            <div class="tiempo">
+                                                <i class="far fa-clock"></i> 20 minutos
+                                            </div>
+                                            <p class="precio-info">Precio más bajo en 30 días, antes del descuento: 11,90 €</p>
+                                            <p class="ahorro">Ahorra hasta un 10%</p>
+                                        </div>
+                                        <div class="carousel-buttons">
+                                            <button class="btn-reservar">Reservar</button>
+                                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                                <i class="fab fa-whatsapp"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <!-- 5. Lavar y peinar corto -->
                                     <div class="servicio-carousel-item">
                                         <div class="servicio-info">
                                             <h4>Lavar y peinar corto</h4>
@@ -559,13 +1213,12 @@
                                         </div>
                                         <div class="carousel-buttons">
                                             <button class="btn-reservar">Reservar</button>
-                                            <!-- LINK DO WHATSAPP ATUALIZADO -->
                                             <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
                                                 <i class="fab fa-whatsapp"></i>
                                             </button>
                                         </div>
                                     </div>
-                                    <!-- Lavar y peinar medio -->
+                                    <!-- 6. Lavar y peinar medio -->
                                     <div class="servicio-carousel-item">
                                         <div class="servicio-info">
                                             <h4>Lavar y peinar medio</h4>
@@ -584,13 +1237,12 @@
                                         </div>
                                         <div class="carousel-buttons">
                                             <button class="btn-reservar">Reservar</button>
-                                            <!-- LINK DO WHATSAPP ATUALIZADO -->
                                             <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
                                                 <i class="fab fa-whatsapp"></i>
                                             </button>
                                         </div>
                                     </div>
-                                    <!-- Lavar y peinar largo -->
+                                    <!-- 7. Lavar y peinar largo -->
                                     <div class="servicio-carousel-item">
                                         <div class="servicio-info">
                                             <h4>Lavar y peinar largo</h4>
@@ -609,228 +1261,219 @@
                                         </div>
                                         <div class="carousel-buttons">
                                             <button class="btn-reservar">Reservar</button>
-                                            <!-- LINK DO WHATSAPP ATUALIZADO -->
                                             <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
                                                 <i class="fab fa-whatsapp"></i>
                                             </button>
                                         </div>
                                     </div>
-                                </div>
-                                <button class="carousel-arrow prev"><i class="fas fa-chevron-left"></i></button>
-                                <button class="carousel-arrow next"><i class="fas fa-chevron-right"></i></button>
-                            </div>
-                            <div class="carousel-nav">
-                                <span class="carousel-dot active"></span>
-                                <span class="carousel-dot"></span>
-                                <span class="carousel-dot"></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- MECHAS -->
-                <div class="accordion__item">
-                    <div class="accordion__header">
-                        <h3><i class="fas fa-sun"></i> MECHAS <span>12 servicios</span></h3>
-                        <span class="accordion__icon"><i class="fas fa-chevron-down"></i></span>
-                    </div>
-                    <div class="accordion__content">
-                        <div class="servicios-carousel">
-                            <div class="carousel-container">
-                                <div class="carousel-track">
-                                    <!-- Mechas toda cabeza plata corto -->
+                                    <!-- 8. Peinado express corto -->
                                     <div class="servicio-carousel-item">
                                         <div class="servicio-info">
-                                            <h4>Mechas toda cabeza plata corto</h4>
-                                            <p>Aplicación de mechas en plata para cabello corto.</p>
+                                            <h4>Peinado express corto</h4>
+                                            <p>Cabello limpio y listo para peinar.</p>
                                             <div class="servicio-precio">
-                                                <span class="precio-actual">45,00 €</span>
-                                                <span class="precio-antiguo">50,00 €</span>
+                                                <span class="precio-actual">9,00 €</span>
+                                                <span class="precio-antiguo">10,00 €</span>
                                                 <span class="descuento">-10%</span>
-                                            </div>
-                                            <div class="tiempo">
-                                                <i class="far fa-clock"></i> 1 hora
-                                            </div>
-                                            <p class="precio-info">Precio más bajo en 30 días, antes del descuento: 50,00 €</p>
-                                            <p class="ahorro">Ahorra hasta un 10%</p>
-                                        </div>
-                                        <div class="carousel-buttons">
-                                            <button class="btn-reservar">Reservar</button>
-                                            <!-- LINK DO WHATSAPP ATUALIZADO -->
-                                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
-                                                <i class="fab fa-whatsapp"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <!-- Mechas toda cabeza plata medio -->
-                                    <div class="servicio-carousel-item">
-                                        <div class="servicio-info">
-                                            <h4>Mechas toda cabeza plata medio</h4>
-                                            <p>Aplicación de mechas en plata para cabello medio.</p>
-                                            <div class="servicio-precio">
-                                                <span class="precio-actual">58,50 €</span>
-                                                <span class="precio-antiguo">65,00 €</span>
-                                                <span class="descuento">-10%</span>
-                                            </div>
-                                            <div class="tiempo">
-                                                <i class="far fa-clock"></i> 1 hora
-                                            </div>
-                                            <p class="precio-info">Precio más bajo en 30 días, antes del descuento: 65,00 €</p>
-                                            <p class="ahorro">Ahorra hasta un 10%</p>
-                                        </div>
-                                        <div class="carousel-buttons">
-                                            <button class="btn-reservar">Reservar</button>
-                                            <!-- LINK DO WHATSAPP ATUALIZADO -->
-                                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
-                                                <i class="fab fa-whatsapp"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <button class="carousel-arrow prev"><i class="fas fa-chevron-left"></i></button>
-                                <button class="carousel-arrow next"><i class="fas fa-chevron-right"></i></button>
-                            </div>
-                            <div class="carousel-nav">
-                                <span class="carousel-dot active"></span>
-                                <span class="carousel-dot"></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- TRATAMIENTOS -->
-                <div class="accordion__item">
-                    <div class="accordion__header">
-                        <h3><i class="fas fa-air-freshener"></i> TRATAMIENTOS <span>11 servicios</span></h3>
-                        <span class="accordion__icon"><i class="fas fa-chevron-down"></i></span>
-                    </div>
-                    <div class="accordion__content">
-                        <div class="servicios-carousel">
-                            <div class="carousel-container">
-                                <div class="carousel-track">
-                                    <!-- Cronograma Capilar -->
-                                    <div class="servicio-carousel-item">
-                                        <div class="servicio-info">
-                                            <h4>Cronograma Capilar – Plan de Cuidado en 3 Semanas</h4>
-                                            <p>El cronograma capilar es un plan profesional de cuidado del cabello diseñado para recuperar la salud capilar en 3 semanas.</p>
-                                            <div class="servicio-precio">
-                                                <span class="precio-actual">65,00 €</span>
-                                            </div>
-                                            <div class="tiempo">
-                                                <i class="far fa-clock"></i> 35 minutos
-                                            </div>
-                                        </div>
-                                        <div class="carousel-buttons">
-                                            <button class="btn-reservar">Reservar</button>
-                                            <!-- LINK DO WHATSAPP ATUALIZADO -->
-                                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
-                                                <i class="fab fa-whatsapp"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <!-- TRATAMIENTO X-PRESS ORGÁNICO CORTO -->
-                                    <div class="servicio-carousel-item">
-                                        <div class="servicio-info">
-                                            <h4>TRATAMIENTO X-PRESS ORGÁNICO CORTO</h4>
-                                            <p>Ideal para cabellos que han pasado por procesos químicos, coloraciones o que necesitan reparación profunda.</p>
-                                            <div class="servicio-precio">
-                                                <span class="precio-actual">63,00 €</span>
-                                                <span class="precio-antiguo">70,00 €</span>
-                                            </div>
-                                            <div class="tiempo">
-                                                <i class="far fa-clock"></i> 40 minutos
-                                            </div>
-                                        </div>
-                                        <div class="carousel-buttons">
-                                            <button class="btn-reservar">Reservar</button>
-                                            <!-- LINK DO WHATSAPP ATUALIZADO -->
-                                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
-                                                <i class="fab fa-whatsapp"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <button class="carousel-arrow prev"><i class="fas fa-chevron-left"></i></button>
-                                <button class="carousel-arrow next"><i class="fas fa-chevron-right"></i></button>
-                            </div>
-                            <div class="carousel-nav">
-                                <span class="carousel-dot active"></span>
-                                <span class="carousel-dot"></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- BARBA -->
-                <div class="accordion__item">
-                    <div class="accordion__header">
-                        <h3><i class="fas fa-user-tie"></i> BARBA <span>7 servicios</span></h3>
-                        <span class="accordion__icon"><i class="fas fa-chevron-down"></i></span>
-                    </div>
-                    <div class="accordion__content">
-                        <div class="servicios-carousel">
-                            <div class="carousel-container">
-                                <div class="carousel-track">
-                                    <!-- Servicio de barba -->
-                                    <div class="servicio-carousel-item">
-                                        <div class="servicio-info">
-                                            <h4>Afeitado y cuidado de barba</h4>
-                                            <p>Afeitado profesional y cuidado completo de la barba.</p>
-                                            <div class="servicio-precio">
-                                                <span class="precio-actual">18,00 €</span>
-                                                <span class="precio-antiguo">20,00 €</span>
-                                                <span class="descuento">-10%</span>
-                                            </div>
-                                            <div class="tiempo">
-                                                <i class="far fa-clock"></i> 35 minutos
-                                            </div>
-                                            <p class="precio-info">Precio más bajo en 30 días, antes del descuento: 20,00 €</p>
-                                            <p class="ahorro">Ahorra hasta un 10%</p>
-                                        </div>
-                                        <div class="carousel-buttons">
-                                            <button class="btn-reservar">Reservar</button>
-                                            <!-- LINK DO WHATSAPP ATUALIZADO -->
-                                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
-                                                <i class="fab fa-whatsapp"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <button class="carousel-arrow prev"><i class="fas fa-chevron-left"></i></button>
-                                <button class="carousel-arrow next"><i class="fas fa-chevron-right"></i></button>
-                            </div>
-                            <div class="carousel-nav">
-                                <span class="carousel-dot active"></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- MOLDADO -->
-                <div class="accordion__item">
-                    <div class="accordion__header">
-                        <h3><i class="fas fa-wind"></i> MOLDADO <span>1 servicio</span></h3>
-                        <span class="accordion__icon"><i class="fas fa-chevron-down"></i></span>
-                    </div>
-                    <div class="accordion__content">
-                        <div class="servicios-carousel">
-                            <div class="carousel-container">
-                                <div class="carousel-track">
-                                    <!-- Moldeado de cabello -->
-                                    <div class="servicio-carousel-item">
-                                        <div class="servicio-info">
-                                            <h4>Moldeado profesional</h4>
-                                            <p>Moldeado y styling profesional para cualquier ocasión.</p>
-                                            <div class="servicio-precio">
-                                                <span class="precio-actual">25,00 €</span>
                                             </div>
                                             <div class="tiempo">
                                                 <i class="far fa-clock"></i> 30 minutos
                                             </div>
+                                            <p class="precio-info">Precio más bajo en 30 días, antes del descuento: 10,00 €</p>
+                                            <p class="ahorro">Ahorra hasta un 10%</p>
                                         </div>
                                         <div class="carousel-buttons">
                                             <button class="btn-reservar">Reservar</button>
-                                            <!-- LINK DO WHATSAPP ATUALIZADO -->
+                                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                                <i class="fab fa-whatsapp"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <!-- 9. Peinado express medio -->
+                                    <div class="servicio-carousel-item">
+                                        <div class="servicio-info">
+                                            <h4>Peinado express medio</h4>
+                                            <p>Cabello limpio y listo para peinar.</p>
+                                            <div class="servicio-precio">
+                                                <span class="precio-actual">10,80 €</span>
+                                                <span class="precio-antiguo">12,00 €</span>
+                                                <span class="descuento">-10%</span>
+                                            </div>
+                                            <div class="tiempo">
+                                                <i class="far fa-clock"></i> 30 minutos
+                                            </div>
+                                            <p class="precio-info">Precio más bajo en 30 días, antes del descuento: 12,00 €</p>
+                                            <p class="ahorro">Ahorra hasta un 10%</p>
+                                        </div>
+                                        <div class="carousel-buttons">
+                                            <button class="btn-reservar">Reservar</button>
+                                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                                <i class="fab fa-whatsapp"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <!-- 10. Peinado express largo -->
+                                    <div class="servicio-carousel-item">
+                                        <div class="servicio-info">
+                                            <h4>Peinado express largo</h4>
+                                            <p>Cabello limpio y listo para peinar.</p>
+                                            <div class="servicio-precio">
+                                                <span class="precio-actual">13,50 €</span>
+                                                <span class="precio-antiguo">15,00 €</span>
+                                                <span class="descuento">-10%</span>
+                                            </div>
+                                            <div class="tiempo">
+                                                <i class="far fa-clock"></i> 30 minutos
+                                            </div>
+                                            <p class="precio-info">Precio más bajo en 30 días, antes del descuento: 15,00 €</p>
+                                            <p class="ahorro">Ahorra hasta un 10%</p>
+                                        </div>
+                                        <div class="carousel-buttons">
+                                            <button class="btn-reservar">Reservar</button>
+                                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                                <i class="fab fa-whatsapp"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <!-- 11. Combo caipifruta corto -->
+                                    <div class="servicio-carousel-item">
+                                        <div class="servicio-info">
+                                            <h4>Combo caipifruta corto</h4>
+                                            <p>Cortar, lavar y secar al aire.</p>
+                                            <div class="servicio-precio">
+                                                <span class="precio-actual">22,50 €</span>
+                                                <span class="precio-antiguo">25,00 €</span>
+                                                <span class="descuento">-10%</span>
+                                            </div>
+                                            <div class="tiempo">
+                                                <i class="far fa-clock"></i> 30 minutos
+                                            </div>
+                                            <p class="precio-info">Precio más bajo en 30 días, antes del descuento: 25,00 €</p>
+                                            <p class="ahorro">Ahorra hasta un 10%</p>
+                                            <p class="extras">Extras</p>
+                                        </div>
+                                        <div class="carousel-buttons">
+                                            <button class="btn-reservar">Reservar</button>
+                                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                                <i class="fab fa-whatsapp"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <!-- 12. Combo caipifruta medio -->
+                                    <div class="servicio-carousel-item">
+                                        <div class="servicio-info">
+                                            <h4>Combo caipifruta medio</h4>
+                                            <p>Cortar, lavar y secar al aire.</p>
+                                            <div class="servicio-precio">
+                                                <span class="precio-actual">27,00 €</span>
+                                                <span class="precio-antiguo">30,00 €</span>
+                                                <span class="descuento">-10%</span>
+                                            </div>
+                                            <div class="tiempo">
+                                                <i class="far fa-clock"></i> 30 minutos
+                                            </div>
+                                            <p class="precio-info">Precio más bajo en 30 días, antes del descuento: 30,00 €</p>
+                                            <p class="ahorro">Ahorra hasta un 10%</p>
+                                            <p class="extras">Extras</p>
+                                        </div>
+                                        <div class="carousel-buttons">
+                                            <button class="btn-reservar">Reservar</button>
+                                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                                <i class="fab fa-whatsapp"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <!-- 13. Combo caipifruta largo -->
+                                    <div class="servicio-carousel-item">
+                                        <div class="servicio-info">
+                                            <h4>Combo caipifruta largo</h4>
+                                            <p>Cortar, lavar y secar al aire.</p>
+                                            <div class="servicio-precio">
+                                                <span class="precio-actual">31,50 €</span>
+                                                <span class="precio-antiguo">35,00 €</span>
+                                                <span class="descuento">-10%</span>
+                                            </div>
+                                            <div class="tiempo">
+                                                <i class="far fa-clock"></i> 30 minutos
+                                            </div>
+                                            <p class="precio-info">Precio más bajo en 30 días, antes del descuento: 35,00 €</p>
+                                            <p class="ahorro">Ahorra hasta un 10%</p>
+                                            <p class="extras">Extras</p>
+                                        </div>
+                                        <div class="carousel-buttons">
+                                            <button class="btn-reservar">Reservar</button>
+                                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                                <i class="fab fa-whatsapp"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <!-- 14. Combo caipirinha corto -->
+                                    <div class="servicio-carousel-item">
+                                        <div class="servicio-info">
+                                            <h4>Combo caipirinha corto</h4>
+                                            <p>Cortar, lavar y peinar.</p>
+                                            <div class="servicio-precio">
+                                                <span class="precio-actual">22,50 €</span>
+                                                <span class="precio-antiguo">25,00 €</span>
+                                                <span class="descuento">-10%</span>
+                                            </div>
+                                            <div class="tiempo">
+                                                <i class="far fa-clock"></i> 45 minutos
+                                            </div>
+                                            <p class="precio-info">Precio más bajo en 30 días, antes del descuento: 25,00 €</p>
+                                            <p class="ahorro">Ahorra hasta un 10%</p>
+                                            <p class="extras">Extras</p>
+                                        </div>
+                                        <div class="carousel-buttons">
+                                            <button class="btn-reservar">Reservar</button>
+                                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                                <i class="fab fa-whatsapp"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <!-- 15. Combo caipirinha medio -->
+                                    <div class="servicio-carousel-item">
+                                        <div class="servicio-info">
+                                            <h4>Combo caipirinha medio</h4>
+                                            <p>Cortar, lavar y peinar.</p>
+                                            <div class="servicio-precio">
+                                                <span class="precio-actual">31,50 €</span>
+                                                <span class="precio-antiguo">35,00 €</span>
+                                                <span class="descuento">-10%</span>
+                                            </div>
+                                            <div class="tiempo">
+                                                <i class="far fa-clock"></i> 45 minutos
+                                            </div>
+                                            <p class="precio-info">Precio más bajo en 30 días, antes del descuento: 35,00 €</p>
+                                            <p class="ahorro">Ahorra hasta un 10%</p>
+                                            <p class="extras">Extras</p>
+                                        </div>
+                                        <div class="carousel-buttons">
+                                            <button class="btn-reservar">Reservar</button>
+                                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                                <i class="fab fa-whatsapp"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <!-- 16. Combo caipirinha largo -->
+                                    <div class="servicio-carousel-item">
+                                        <div class="servicio-info">
+                                            <h4>Combo caipirinha largo</h4>
+                                            <p>Cortar, lavar y peinar.</p>
+                                            <div class="servicio-precio">
+                                                <span class="precio-actual">36,00 €</span>
+                                                <span class="precio-antiguo">40,00 €</span>
+                                                <span class="descuento">-10%</span>
+                                            </div>
+                                            <div class="tiempo">
+                                                <i class="far fa-clock"></i> 45 minutos
+                                            </div>
+                                            <p class="precio-info">Precio más bajo en 30 días, antes del descuento: 40,00 €</p>
+                                            <p class="ahorro">Ahorra hasta un 10%</p>
+                                            <p class="extras">Extras</p>
+                                        </div>
+                                        <div class="carousel-buttons">
+                                            <button class="btn-reservar">Reservar</button>
                                             <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
                                                 <i class="fab fa-whatsapp"></i>
                                             </button>
@@ -841,16 +1484,895 @@
                                 <button class="carousel-arrow next"><i class="fas fa-chevron-right"></i></button>
                             </div>
                             <div class="carousel-nav">
+                                <!-- 16 dots -->
                                 <span class="carousel-dot active"></span>
+                                <span class="carousel-dot"></span>
+                                <span class="carousel-dot"></span>
+                                <span class="carousel-dot"></span>
+                                <span class="carousel-dot"></span>
+                                <span class="carousel-dot"></span>
+                                <span class="carousel-dot"></span>
+                                <span class="carousel-dot"></span>
+                                <span class="carousel-dot"></span>
+                                <span class="carousel-dot"></span>
+                                <span class="carousel-dot"></span>
+                                <span class="carousel-dot"></span>
+                                <span class="carousel-dot"></span>
+                                <span class="carousel-dot"></span>
+                                <span class="carousel-dot"></span>
+                                <span class="carousel-dot"></span>
                             </div>
                         </div>
                     </div>
                 </div>
+
+ <!-- MECHAS (12 servicios) -->
+<div class="accordion__item">
+    <div class="accordion__header">
+        <h3><i class="fas fa-sun"></i> MECHAS <span>12 servicios</span></h3>
+        <span class="accordion__icon"><i class="fas fa-chevron-down"></i></span>
+    </div>
+    <div class="accordion__content">
+        <div class="servicios-carousel">
+            <div class="carousel-container">
+                <div class="carousel-track">
+                    <!-- 1. Mechas toda cabeza plata corto -->
+                    <div class="servicio-carousel-item">
+                        <div class="servicio-info">
+                            <h4>Mechas toda cabeza plata corto</h4>
+                            <p>Aplicación de mechas en plata para cabello corto.</p>
+                            <div class="servicio-precio">
+                                <span class="precio-actual">45,00 €</span>
+                                <span class="precio-antiguo">50,00 €</span>
+                                <span class="descuento">-10%</span>
+                            </div>
+                            <div class="tiempo">
+                                <i class="far fa-clock"></i> 1 hora
+                            </div>
+                            <p class="precio-info">Precio más bajo en 30 días, antes del descuento: 50,00 €</p>
+                            <p class="ahorro">Ahorra hasta un 10%</p>
+                        </div>
+                        <div class="carousel-buttons">
+                            <button class="btn-reservar">Reservar</button>
+                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                <i class="fab fa-whatsapp"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- 2. Mechas toda cabeza plata medio -->
+                    <div class="servicio-carousel-item">
+                        <div class="servicio-info">
+                            <h4>Mechas toda cabeza plata medio</h4>
+                            <p>Aplicación de mechas en plata para cabello medio.</p>
+                            <div class="servicio-precio">
+                                <span class="precio-actual">58,50 €</span>
+                                <span class="precio-antiguo">65,00 €</span>
+                                <span class="descuento">-10%</span>
+                            </div>
+                            <div class="tiempo">
+                                <i class="far fa-clock"></i> 1 hora
+                            </div>
+                            <p class="precio-info">Precio más bajo en 30 días, antes del descuento: 65,00 €</p>
+                            <p class="ahorro">Ahorra hasta un 10%</p>
+                        </div>
+                        <div class="carousel-buttons">
+                            <button class="btn-reservar">Reservar</button>
+                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                <i class="fab fa-whatsapp"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- 3. Mechas toda cabeza plata largo -->
+                    <div class="servicio-carousel-item">
+                        <div class="servicio-info">
+                            <h4>Mechas toda cabeza plata largo</h4>
+                            <p>Aplicación de mechas en plata para cabello largo.</p>
+                            <div class="servicio-precio">
+                                <span class="precio-actual">72,00 €</span>
+                                <span class="precio-antiguo">80,00 €</span>
+                                <span class="descuento">-10%</span>
+                            </div>
+                            <div class="tiempo">
+                                <i class="far fa-clock"></i> 1 hora
+                            </div>
+                            <p class="precio-info">Precio más bajo en 30 días, antes del descuento: 80,00 €</p>
+                            <p class="ahorro">Ahorra hasta un 10%</p>
+                        </div>
+                        <div class="carousel-buttons">
+                            <button class="btn-reservar">Reservar</button>
+                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                <i class="fab fa-whatsapp"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- 4. Mechas toda cabeza balayage corto -->
+                    <div class="servicio-carousel-item">
+                        <div class="servicio-info">
+                            <h4>Mechas toda cabeza balayage corto</h4>
+                            <p>Aplicación de balayage para cabello corto.</p>
+                            <div class="servicio-precio">
+                                <span class="precio-actual">54,00 €</span>
+                                <span class="precio-antiguo">60,00 €</span>
+                                <span class="descuento">-10%</span>
+                            </div>
+                            <div class="tiempo">
+                                <i class="far fa-clock"></i> 1 hora
+                            </div>
+                            <p class="precio-info">Precio más bajo en 30 días, antes del descuento: 60,00 €</p>
+                            <p class="ahorro">Ahorra hasta un 10%</p>
+                        </div>
+                        <div class="carousel-buttons">
+                            <button class="btn-reservar">Reservar</button>
+                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                <i class="fab fa-whatsapp"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- 5. Mechas toda cabeza balayage medio -->
+                    <div class="servicio-carousel-item">
+                        <div class="servicio-info">
+                            <h4>Mechas toda cabeza balayage medio</h4>
+                            <p>Aplicación de balayage para cabello medio.</p>
+                            <div class="servicio-precio">
+                                <span class="precio-actual">67,50 €</span>
+                                <span class="precio-antiguo">75,00 €</span>
+                                <span class="descuento">-10%</span>
+                            </div>
+                            <div class="tiempo">
+                                <i class="far fa-clock"></i> 1 hora
+                            </div>
+                            <p class="precio-info">Precio más bajo en 30 días, antes del descuento: 75,00 €</p>
+                            <p class="ahorro">Ahorra hasta un 10%</p>
+                        </div>
+                        <div class="carousel-buttons">
+                            <button class="btn-reservar">Reservar</button>
+                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                <i class="fab fa-whatsapp"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- 6. Mechas toda cabeza balayage largo -->
+                    <div class="servicio-carousel-item">
+                        <div class="servicio-info">
+                            <h4>Mechas toda cabeza balayage largo</h4>
+                            <p>Aplicación de balayage para cabello largo.</p>
+                            <div class="servicio-precio">
+                                <span class="precio-actual">81,00 €</span>
+                                <span class="precio-antiguo">90,00 €</span>
+                                <span class="descuento">-10%</span>
+                            </div>
+                            <div class="tiempo">
+                                <i class="far fa-clock"></i> 1 hora
+                            </div>
+                            <p class="precio-info">Precio más bajo en 30 días, antes del descuento: 90,00 €</p>
+                            <p class="ahorro">Ahorra hasta un 10%</p>
+                        </div>
+                        <div class="carousel-buttons">
+                            <button class="btn-reservar">Reservar</button>
+                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                <i class="fab fa-whatsapp"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- 7. Mechas toda cabeza babylights corto -->
+                    <div class="servicio-carousel-item">
+                        <div class="servicio-info">
+                            <h4>Mechas toda cabeza babylights corto</h4>
+                            <p>Aplicación de babylights para cabello corto.</p>
+                            <div class="servicio-precio">
+                                <span class="precio-actual">58,50 €</span>
+                                <span class="precio-antiguo">65,00 €</span>
+                                <span class="descuento">-10%</span>
+                            </div>
+                            <div class="tiempo">
+                                <i class="far fa-clock"></i> 1 hora
+                            </div>
+                            <p class="precio-info">Precio más bajo en 30 días, antes del descuento: 65,00 €</p>
+                            <p class="ahorro">Ahorra hasta un 10%</p>
+                        </div>
+                        <div class="carousel-buttons">
+                            <button class="btn-reservar">Reservar</button>
+                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                <i class="fab fa-whatsapp"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- 8. Mechas toda cabeza babylights medio -->
+                    <div class="servicio-carousel-item">
+                        <div class="servicio-info">
+                            <h4>Mechas toda cabeza babylights medio</h4>
+                            <p>Aplicación de babylights para cabello medio.</p>
+                            <div class="servicio-precio">
+                                <span class="precio-actual">72,00 €</span>
+                                <span class="precio-antiguo">80,00 €</span>
+                                <span class="descuento">-10%</span>
+                            </div>
+                            <div class="tiempo">
+                                <i class="far fa-clock"></i> 1 hora
+                            </div>
+                            <p class="precio-info">Precio más bajo en 30 días, antes del descuento: 80,00 €</p>
+                            <p class="ahorro">Ahorra hasta un 10%</p>
+                        </div>
+                        <div class="carousel-buttons">
+                            <button class="btn-reservar">Reservar</button>
+                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                <i class="fab fa-whatsapp"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- 9. Mechas toda cabeza babylights largo -->
+                    <div class="servicio-carousel-item">
+                        <div class="servicio-info">
+                            <h4>Mechas toda cabeza babylights largo</h4>
+                            <p>Aplicación de babylights para cabello largo.</p>
+                            <div class="servicio-precio">
+                                <span class="precio-actual">85,50 €</span>
+                                <span class="precio-antiguo">95,00 €</span>
+                                <span class="descuento">-10%</span>
+                            </div>
+                            <div class="tiempo">
+                                <i class="far fa-clock"></i> 1 hora
+                            </div>
+                            <p class="precio-info">Precio más bajo en 30 días, antes del descuento: 95,00 €</p>
+                            <p class="ahorro">Ahorra hasta un 10%</p>
+                        </div>
+                        <div class="carousel-buttons">
+                            <button class="btn-reservar">Reservar</button>
+                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                <i class="fab fa-whatsapp"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- 10. Mechas frontal (peine o plata) corto -->
+                    <div class="servicio-carousel-item">
+                        <div class="servicio-info">
+                            <h4>Mechas frontal (peine o plata) corto</h4>
+                            <p>Mechas frontales con peine o plata para cabello corto.</p>
+                            <div class="servicio-precio">
+                                <span class="precio-actual">27,00 €</span>
+                                <span class="precio-antiguo">30,00 €</span>
+                                <span class="descuento">-10%</span>
+                            </div>
+                            <div class="tiempo">
+                                <i class="far fa-clock"></i> 30 minutos
+                            </div>
+                            <p class="precio-info">Precio más bajo en 30 días, antes del descuento: 30,00 €</p>
+                            <p class="ahorro">Ahorra hasta un 10%</p>
+                        </div>
+                        <div class="carousel-buttons">
+                            <button class="btn-reservar">Reservar</button>
+                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                <i class="fab fa-whatsapp"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- 11. Mechas frontal (peine o plata) medio -->
+                    <div class="servicio-carousel-item">
+                        <div class="servicio-info">
+                            <h4>Mechas frontal (peine o plata) medio</h4>
+                            <p>Mechas frontales con peine o plata para cabello medio.</p>
+                            <div class="servicio-precio">
+                                <span class="precio-actual">36,00 €</span>
+                                <span class="precio-antiguo">40,00 €</span>
+                                <span class="descuento">-10%</span>
+                            </div>
+                            <div class="tiempo">
+                                <i class="far fa-clock"></i> 30 minutos
+                            </div>
+                            <p class="precio-info">Precio más bajo en 30 días, antes del descuento: 40,00 €</p>
+                            <p class="ahorro">Ahorra hasta un 10%</p>
+                        </div>
+                        <div class="carousel-buttons">
+                            <button class="btn-reservar">Reservar</button>
+                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                <i class="fab fa-whatsapp"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- 12. Mechas frontal (peine o plata) largo -->
+                    <div class="servicio-carousel-item">
+                        <div class="servicio-info">
+                            <h4>Mechas frontal (peine o plata) largo</h4>
+                            <p>Mechas frontales con peine o plata para cabello largo.</p>
+                            <div class="servicio-precio">
+                                <span class="precio-actual">45,00 €</span>
+                                <span class="precio-antiguo">50,00 €</span>
+                                <span class="descuento">-10%</span>
+                            </div>
+                            <div class="tiempo">
+                                <i class="far fa-clock"></i> 30 minutos
+                            </div>
+                            <p class="precio-info">Precio más bajo en 30 días, antes del descuento: 50,00 €</p>
+                            <p class="ahorro">Ahorra hasta un 10%</p>
+                        </div>
+                        <div class="carousel-buttons">
+                            <button class="btn-reservar">Reservar</button>
+                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                <i class="fab fa-whatsapp"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-arrow prev"><i class="fas fa-chevron-left"></i></button>
+                <button class="carousel-arrow next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="carousel-nav">
+                <!-- 12 dots -->
+                <span class="carousel-dot active"></span>
+                <span class="carousel-dot"></span>
+                <span class="carousel-dot"></span>
+                <span class="carousel-dot"></span>
+                <span class="carousel-dot"></span>
+                <span class="carousel-dot"></span>
+                <span class="carousel-dot"></span>
+                <span class="carousel-dot"></span>
+                <span class="carousel-dot"></span>
+                <span class="carousel-dot"></span>
+                <span class="carousel-dot"></span>
+                <span class="carousel-dot"></span>
             </div>
         </div>
+    </div>
+</div>
+ <!-- TRATAMIENTOS (12 servicios) -->
+<div class="accordion__item">
+    <div class="accordion__header">
+        <h3><i class="fas fa-air-freshener"></i> TRATAMIENTOS <span>12 servicios</span></h3>
+        <span class="accordion__icon"><i class="fas fa-chevron-down"></i></span>
+    </div>
+    <div class="accordion__content">
+        <div class="servicios-carousel">
+            <div class="carousel-container">
+                <div class="carousel-track">
+                    <!-- 1. TRATAMIENTO X-PRESS ORGÁNICO CORTO -->
+                    <div class="servicio-carousel-item">
+                        <div class="servicio-info">
+                            <h4>TRATAMIENTO X-PRESS ORGÁNICO CORTO</h4>
+                            <p>Ideal para cabellos que han pasado por procesos químicos, coloraciones o que necesitan reparación profunda.</p>
+                            <div class="servicio-precio">
+                                <span class="precio-actual">63,00 €</span>
+                                <span class="precio-antiguo">70,00 €</span>
+                                <span class="descuento">-10%</span>
+                            </div>
+                            <div class="tiempo">
+                                <i class="far fa-clock"></i> 40 minutos
+                            </div>
+                            <p class="precio-info">Precio más bajo en 30 días, antes del descuento: 70,00 €</p>
+                            <p class="ahorro">Ahorra hasta un 10%</p>
+                            <p class="extras">Extras</p>
+                        </div>
+                        <div class="carousel-buttons">
+                            <button class="btn-reservar">Reservar</button>
+                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                <i class="fab fa-whatsapp"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- 2. TRATAMIENTO X-PRESS ORGÁNICO MEDIO -->
+                    <div class="servicio-carousel-item">
+                        <div class="servicio-info">
+                            <h4>TRATAMIENTO X-PRESS ORGÁNICO MEDIO</h4>
+                            <p>Ideal para cabellos que han pasado por procesos químicos, coloraciones o que necesitan reparación profunda.</p>
+                            <div class="servicio-precio">
+                                <span class="precio-actual">72,00 €</span>
+                                <span class="precio-antiguo">80,00 €</span>
+                                <span class="descuento">-10%</span>
+                            </div>
+                            <div class="tiempo">
+                                <i class="far fa-clock"></i> 40 minutos
+                            </div>
+                            <p class="precio-info">Precio más bajo en 30 días, antes del descuento: 80,00 €</p>
+                            <p class="ahorro">Ahorra hasta un 10%</p>
+                            <p class="extras">Extras</p>
+                        </div>
+                        <div class="carousel-buttons">
+                            <button class="btn-reservar">Reservar</button>
+                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                <i class="fab fa-whatsapp"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- 3. TRATAMIENTO X-PRESS ORGÁNICO LARGO -->
+                    <div class="servicio-carousel-item">
+                        <div class="servicio-info">
+                            <h4>TRATAMIENTO X-PRESS ORGÁNICO LARGO</h4>
+                            <p>Ideal para cabellos que han pasado por procesos químicos, coloraciones o que necesitan reparación profunda.</p>
+                            <div class="servicio-precio">
+                                <span class="precio-actual">81,00 €</span>
+                                <span class="precio-antiguo">90,00 €</span>
+                                <span class="descuento">-10%</span>
+                            </div>
+                            <div class="tiempo">
+                                <i class="far fa-clock"></i> 40 minutos
+                            </div>
+                            <p class="precio-info">Precio más bajo en 30 días, antes del descuento: 90,00 €</p>
+                            <p class="ahorro">Ahorra hasta un 10%</p>
+                            <p class="extras">Extras</p>
+                        </div>
+                        <div class="carousel-buttons">
+                            <button class="btn-reservar">Reservar</button>
+                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                <i class="fab fa-whatsapp"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- 4. Cronograma Capilar -->
+                    <div class="servicio-carousel-item">
+                        <div class="servicio-info">
+                            <h4>Cronograma Capilar – Plan de Cuidado en 3 Semanas</h4>
+                            <p>El cronograma capilar es un plan profesional de cuidado del cabello diseñado para recuperar la salud capilar en 3 semanas.</p>
+                            <div class="servicio-precio">
+                                <span class="precio-actual">65,00 €</span>
+                            </div>
+                            <div class="tiempo">
+                                <i class="far fa-clock"></i> 35 minutos
+                            </div>
+                        </div>
+                        <div class="carousel-buttons">
+                            <button class="btn-reservar">Reservar</button>
+                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                <i class="fab fa-whatsapp"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- 5. BELLEZA BOTÁNICA : Orquídea Premium -->
+                    <div class="servicio-carousel-item">
+                        <div class="servicio-info">
+                            <h4>BELLEZA BOTÁNICA : Orquídea Premium</h4>
+                            <p>Un tratamiento capilar intensivo que combina el poder regenerador de la orquídea.</p>
+                            <div class="servicio-precio">
+                                <span class="precio-actual">13,50 €</span>
+                                <span class="precio-antiguo">15,00 €</span>
+                                <span class="descuento">-10%</span>
+                            </div>
+                            <div class="tiempo">
+                                <i class="far fa-clock"></i> 20 minutos
+                            </div>
+                            <p class="precio-info">Precio más bajo en 30 días, antes del descuento: 15,00 €</p>
+                            <p class="ahorro">Ahorra hasta un 10%</p>
+                        </div>
+                        <div class="carousel-buttons">
+                            <button class="btn-reservar">Reservar</button>
+                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                <i class="fab fa-whatsapp"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- 6. Bioplastica flequillo -->
+                    <div class="servicio-carousel-item">
+                        <div class="servicio-info">
+                            <h4>Bioplastica flequillo</h4>
+                            <p>Tratamiento de bioplastia para flequillo.</p>
+                            <div class="servicio-precio">
+                                <span class="precio-actual">18,00 €</span>
+                                <span class="precio-antiguo">20,00 €</span>
+                                <span class="descuento">-10%</span>
+                            </div>
+                            <div class="tiempo">
+                                <i class="far fa-clock"></i> 30 minutos
+                            </div>
+                            <p class="precio-info">Precio más bajo en 30 días, antes del descuento: 20,00 €</p>
+                            <p class="ahorro">Ahorra hasta un 10%</p>
+                        </div>
+                        <div class="carousel-buttons">
+                            <button class="btn-reservar">Reservar</button>
+                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                <i class="fab fa-whatsapp"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- 7. Keratina orgánica corto -->
+                    <div class="servicio-carousel-item">
+                        <div class="servicio-info">
+                            <h4>Keratina orgánica corto</h4>
+                            <p>Tratamiento de keratina orgánica para cabello corto.</p>
+                            <div class="servicio-precio">
+                                <span class="precio-actual">72,00 €</span>
+                                <span class="precio-antiguo">80,00 €</span>
+                                <span class="descuento">-10%</span>
+                            </div>
+                            <div class="tiempo">
+                                <i class="far fa-clock"></i> 1 hora
+                            </div>
+                            <p class="precio-info">Precio más bajo en 30 días, antes del descuento: 80,00 €</p>
+                            <p class="ahorro">Ahorra hasta un 10%</p>
+                            <p class="extras">Extras</p>
+                        </div>
+                        <div class="carousel-buttons">
+                            <button class="btn-reservar">Reservar</button>
+                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                <i class="fab fa-whatsapp"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- 8. Keratina orgánica medio -->
+                    <div class="servicio-carousel-item">
+                        <div class="servicio-info">
+                            <h4>Keratina orgánica medio</h4>
+                            <p>Tratamiento de keratina orgánica para cabello medio.</p>
+                            <div class="servicio-precio">
+                                <span class="precio-actual">90,00 €</span>
+                                <span class="precio-antiguo">100,00 €</span>
+                                <span class="descuento">-10%</span>
+                            </div>
+                            <div class="tiempo">
+                                <i class="far fa-clock"></i> 1 hora
+                            </div>
+                            <p class="precio-info">Precio más bajo en 30 días, antes del descuento: 100,00 €</p>
+                            <p class="ahorro">Ahorra hasta un 10%</p>
+                            <p class="extras">Extras</p>
+                        </div>
+                        <div class="carousel-buttons">
+                            <button class="btn-reservar">Reservar</button>
+                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                <i class="fab fa-whatsapp"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- 9. Keratina orgánica largo -->
+                    <div class="servicio-carousel-item">
+                        <div class="servicio-info">
+                            <h4>Keratina orgánica largo</h4>
+                            <p>Tratamiento de keratina orgánica para cabello largo.</p>
+                            <div class="servicio-precio">
+                                <span class="precio-actual">108,00 €</span>
+                                <span class="precio-antiguo">120,00 €</span>
+                                <span class="descuento">-10%</span>
+                            </div>
+                            <div class="tiempo">
+                                <i class="far fa-clock"></i> 1 hora
+                            </div>
+                            <p class="precio-info">Precio más bajo en 30 días, antes del descuento: 120,00 €</p>
+                            <p class="ahorro">Ahorra hasta un 10%</p>
+                            <p class="extras">Extras</p>
+                        </div>
+                        <div class="carousel-buttons">
+                            <button class="btn-reservar">Reservar</button>
+                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                <i class="fab fa-whatsapp"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- 10. Mascarilla capilar -->
+                    <div class="servicio-carousel-item">
+                        <div class="servicio-info">
+                            <h4>Mascarilla capilar</h4>
+                            <p>Mascarilla de tratamiento intensivo.</p>
+                            <div class="servicio-precio">
+                                <span class="precio-actual">3,60 €</span>
+                                <span class="precio-antiguo">4,00 €</span>
+                                <span class="descuento">-10%</span>
+                            </div>
+                            <div class="tiempo">
+                                <i class="far fa-clock"></i> 15 minutos
+                            </div>
+                            <p class="precio-info">Precio más bajo en 30 días, antes del descuento: 4,00 €</p>
+                            <p class="ahorro">Ahorra hasta un 10%</p>
+                        </div>
+                        <div class="carousel-buttons">
+                            <button class="btn-reservar">Reservar</button>
+                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                <i class="fab fa-whatsapp"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- 11. Babyliss adicional -->
+                    <div class="servicio-carousel-item">
+                        <div class="servicio-info">
+                            <h4>Babyliss adicional</h4>
+                            <p>Uso adicional de babyliss para acabados.</p>
+                            <div class="servicio-precio">
+                                <span class="precio-actual">4,50 €</span>
+                                <span class="precio-antiguo">5,00 €</span>
+                                <span class="descuento">-10%</span>
+                            </div>
+                            <div class="tiempo">
+                                <i class="far fa-clock"></i> 10 minutos
+                            </div>
+                            <p class="precio-info">Precio más bajo en 30 días, antes del descuento: 5,00 €</p>
+                            <p class="ahorro">Ahorra hasta un 10%</p>
+                        </div>
+                        <div class="carousel-buttons">
+                            <button class="btn-reservar">Reservar</button>
+                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                <i class="fab fa-whatsapp"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- 12. Aplicación anticaída -->
+                    <div class="servicio-carousel-item">
+                        <div class="servicio-info">
+                            <h4>Aplicación anticaída</h4>
+                            <p>Tratamiento para fortalecer el cabello y prevenir la caída.</p>
+                            <div class="servicio-precio">
+                                <span class="precio-actual">18,00 €</span>
+                                <span class="precio-antiguo">20,00 €</span>
+                                <span class="descuento">-10%</span>
+                            </div>
+                            <div class="tiempo">
+                                <i class="far fa-clock"></i> 30 minutos
+                            </div>
+                            <p class="precio-info">Precio más bajo en 30 días, antes del descuento: 20,00 €</p>
+                            <p class="ahorro">Ahorra hasta un 10%</p>
+                        </div>
+                        <div class="carousel-buttons">
+                            <button class="btn-reservar">Reservar</button>
+                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                <i class="fab fa-whatsapp"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-arrow prev"><i class="fas fa-chevron-left"></i></button>
+                <button class="carousel-arrow next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="carousel-nav">
+                <!-- 12 dots -->
+                <span class="carousel-dot active"></span>
+                <span class="carousel-dot"></span>
+                <span class="carousel-dot"></span>
+                <span class="carousel-dot"></span>
+                <span class="carousel-dot"></span>
+                <span class="carousel-dot"></span>
+                <span class="carousel-dot"></span>
+                <span class="carousel-dot"></span>
+                <span class="carousel-dot"></span>
+                <span class="carousel-dot"></span>
+                <span class="carousel-dot"></span>
+                <span class="carousel-dot"></span>
+            </div>
+        </div>
+    </div>
+</div>
+ <!-- BARBA (6 servicios) -->
+<div class="accordion__item">
+    <div class="accordion__header">
+        <h3><i class="fas fa-user-tie"></i> BARBA <span>6 servicios</span></h3>
+        <span class="accordion__icon"><i class="fas fa-chevron-down"></i></span>
+    </div>
+    <div class="accordion__content">
+        <div class="servicios-carousel">
+            <div class="carousel-container">
+                <div class="carousel-track">
+                    <!-- 1. Afeitar Barba Simples -->
+                    <div class="servicio-carousel-item">
+                        <div class="servicio-info">
+                            <h4>Afeitar Barba Simples</h4>
+                            <p>Limpieza y forma básica de la barba utilizando tijera, máquina y shaver para un acabado limpio y apurado.</p>
+                            <div class="servicio-precio">
+                                <span class="precio-actual">9,00 €</span>
+                                <span class="precio-antiguo">10,00 €</span>
+                                <span class="descuento">-10%</span>
+                            </div>
+                            <div class="tiempo">
+                                <i class="far fa-clock"></i> 25 minutos
+                            </div>
+                            <p class="precio-info">Precio más bajo en 30 días, antes del descuento: 10,00 €</p>
+                            <p class="ahorro">Ahorra hasta un 10%</p>
+                        </div>
+                        <div class="carousel-buttons">
+                            <button class="btn-reservar">Reservar</button>
+                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                <i class="fab fa-whatsapp"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- 2. Afeitar Barba Simples Longa -->
+                    <div class="servicio-carousel-item">
+                        <div class="servicio-info">
+                            <h4>Afeitar Barba Simples Longa</h4>
+                            <p>Limpieza y forma básica para barbas más largas, con tijera, máquina y shaver.</p>
+                            <div class="servicio-precio">
+                                <span class="precio-actual">13,50 €</span>
+                                <span class="precio-antiguo">15,00 €</span>
+                                <span class="descuento">-10%</span>
+                            </div>
+                            <div class="tiempo">
+                                <i class="far fa-clock"></i> 30 minutos
+                            </div>
+                            <p class="precio-info">Precio más bajo en 30 días, antes del descuento: 15,00 €</p>
+                            <p class="ahorro">Ahorra hasta un 10%</p>
+                        </div>
+                        <div class="carousel-buttons">
+                            <button class="btn-reservar">Reservar</button>
+                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                <i class="fab fa-whatsapp"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- 3. Afeitado y Definición de Barba -->
+                    <div class="servicio-carousel-item">
+                        <div class="servicio-info">
+                            <h4>Afeitado y Definición de Barba</h4>
+                            <p>Servicio profesional con máquina, tijera y shaver para un acabado impecable. Perfecto para un look natural y equilibrado.</p>
+                            <div class="servicio-precio">
+                                <span class="precio-actual">14,40 €</span>
+                                <span class="precio-antiguo">16,00 €</span>
+                                <span class="descuento">-10%</span>
+                            </div>
+                            <div class="tiempo">
+                                <i class="far fa-clock"></i> 25 minutos
+                            </div>
+                            <p class="precio-info">Precio más bajo en 30 días, antes del descuento: 16,00 €</p>
+                            <p class="ahorro">Ahorra hasta un 10%</p>
+                        </div>
+                        <div class="carousel-buttons">
+                            <button class="btn-reservar">Reservar</button>
+                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                <i class="fab fa-whatsapp"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- 4. Afeitado y Definición de Barba Longa -->
+                    <div class="servicio-carousel-item">
+                        <div class="servicio-info">
+                            <h4>Afeitado y Definición de Barba Longa</h4>
+                            <p>Para barbas más largas, con la misma precisión y acabado profesional.</p>
+                            <div class="servicio-precio">
+                                <span class="precio-actual">18,00 €</span>
+                                <span class="precio-antiguo">20,00 €</span>
+                                <span class="descuento">-10%</span>
+                            </div>
+                            <div class="tiempo">
+                                <i class="far fa-clock"></i> 30 minutos
+                            </div>
+                            <p class="precio-info">Precio más bajo en 30 días, antes del descuento: 20,00 €</p>
+                            <p class="ahorro">Ahorra hasta un 10%</p>
+                        </div>
+                        <div class="carousel-buttons">
+                            <button class="btn-reservar">Reservar</button>
+                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                <i class="fab fa-whatsapp"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- 5. Spa de Barba -->
+                    <div class="servicio-carousel-item">
+                        <div class="servicio-info">
+                            <h4>Spa de Barba</h4>
+                            <p>Experiencia premium: diseño con tijera y máquina, shaver, navaja tradicional, toallas caliente y fría, masaje facial e hidratación.</p>
+                            <div class="servicio-precio">
+                                <span class="precio-actual">22,50 €</span>
+                                <span class="precio-antiguo">25,00 €</span>
+                                <span class="descuento">-10%</span>
+                            </div>
+                            <div class="tiempo">
+                                <i class="far fa-clock"></i> 35 minutos
+                            </div>
+                            <p class="precio-info">Precio más bajo en 30 días, antes del descuento: 25,00 €</p>
+                            <p class="ahorro">Ahorra hasta un 10%</p>
+                            <p class="extras">Extras</p>
+                        </div>
+                        <div class="carousel-buttons">
+                            <button class="btn-reservar">Reservar</button>
+                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                <i class="fab fa-whatsapp"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- 6. Spa de Barba Longa -->
+                    <div class="servicio-carousel-item">
+                        <div class="servicio-info">
+                            <h4>Spa de Barba Longa</h4>
+                            <p>Experiencia premium para barbas largas, con todos los beneficios del spa.</p>
+                            <div class="servicio-precio">
+                                <span class="precio-actual">27,00 €</span>
+                                <span class="precio-antiguo">30,00 €</span>
+                                <span class="descuento">-10%</span>
+                            </div>
+                            <div class="tiempo">
+                                <i class="far fa-clock"></i> 35 minutos
+                            </div>
+                            <p class="precio-info">Precio más bajo en 30 días, antes del descuento: 30,00 €</p>
+                            <p class="ahorro">Ahorra hasta un 10%</p>
+                            <p class="extras">Extras</p>
+                        </div>
+                        <div class="carousel-buttons">
+                            <button class="btn-reservar">Reservar</button>
+                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                <i class="fab fa-whatsapp"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-arrow prev"><i class="fas fa-chevron-left"></i></button>
+                <button class="carousel-arrow next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="carousel-nav">
+                <!-- 6 dots -->
+                <span class="carousel-dot active"></span>
+                <span class="carousel-dot"></span>
+                <span class="carousel-dot"></span>
+                <span class="carousel-dot"></span>
+                <span class="carousel-dot"></span>
+                <span class="carousel-dot"></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MOLDEADO (3 servicios) -->
+<div class="accordion__item">
+    <div class="accordion__header">
+        <h3><i class="fas fa-wind"></i> MOLDEADO <span>3 servicios</span></h3>
+        <span class="accordion__icon"><i class="fas fa-chevron-down"></i></span>
+    </div>
+    <div class="accordion__content">
+        <div class="servicios-carousel">
+            <div class="carousel-container">
+                <div class="carousel-track">
+                    <!-- 1. Moldeado Largo -->
+                    <div class="servicio-carousel-item">
+                        <div class="servicio-info">
+                            <h4>Moldeado Largo</h4>
+                            <p>Tratamiento de ondulación ligera para aportar formato, volumen y movimiento.</p>
+                            <div class="servicio-precio">
+                                <span class="precio-actual">89,00 €</span>
+                            </div>
+                            <div class="tiempo">
+                                <i class="far fa-clock"></i> 30 minutos
+                            </div>
+                        </div>
+                        <div class="carousel-buttons">
+                            <button class="btn-reservar">Reservar</button>
+                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                <i class="fab fa-whatsapp"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- 2. Moldeado Médio -->
+                    <div class="servicio-carousel-item">
+                        <div class="servicio-info">
+                            <h4>Moldeado Médio</h4>
+                            <p>Tratamiento de ondulación ligera para aportar formato, volumen y movimiento.</p>
+                            <div class="servicio-precio">
+                                <span class="precio-actual">69,00 €</span>
+                            </div>
+                            <div class="tiempo">
+                                <i class="far fa-clock"></i> 45 minutos
+                            </div>
+                        </div>
+                        <div class="carousel-buttons">
+                            <button class="btn-reservar">Reservar</button>
+                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                <i class="fab fa-whatsapp"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- 3. Moldeado Opción 2 -->
+                    <div class="servicio-carousel-item">
+                        <div class="servicio-info">
+                            <h4>Moldeado Opción 2</h4>
+                            <p>Tratamiento de ondulación ligera para aportar formato, volumen y movimiento.</p>
+                            <div class="servicio-precio">
+                                <span class="precio-actual">49,00 €</span>
+                            </div>
+                            <div class="tiempo">
+                                <i class="far fa-clock"></i> 40 minutos
+                            </div>
+                        </div>
+                        <div class="carousel-buttons">
+                            <button class="btn-reservar">Reservar</button>
+                            <button class="btn-whatsapp" onclick="window.open('https://wa.me/34605886004', '_blank')">
+                                <i class="fab fa-whatsapp"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-arrow prev"><i class="fas fa-chevron-left"></i></button>
+                <button class="carousel-arrow next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="carousel-nav">
+                <span class="carousel-dot active"></span>
+                <span class="carousel-dot"></span>
+                <span class="carousel-dot"></span>
+            </div>
+        </div>
+    </div>
+</div>
     </section>
 
-    <!-- NOVA SEÇÃO: Testimonios de Clientes -->
+    <!-- Sección Testimonios -->
     <section id="testimonios" class="testimonios">
         <div class="container">
             <h2 class="section-title">Lo que dicen nuestros clientes</h2>
@@ -868,11 +2390,7 @@
                         <div class="testimonio-fecha">Ene. 16, 2026</div>
                     </div>
                     <div class="estrellas">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                     </div>
                     <div class="testimonio-texto">
                         ¡Quedé extremamente feliz con mi resultado! El salon es muy lindo/limpio y todos fueron muy amables. 100% voy a regresar!! Ellos hablan español, portugués y inglés.
@@ -890,11 +2408,7 @@
                         <div class="testimonio-fecha">Dic. 25, 2025</div>
                     </div>
                     <div class="estrellas">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                     </div>
                     <div class="testimonio-texto">
                         Recomendado por completo. El trato, talento y carisma de Cristo es increíble. Mi novia y yo quedamos encantados con el nuevo look. ¡Definitivamente volveremos!
@@ -912,11 +2426,7 @@
                         <div class="testimonio-fecha">Ago. 27, 2025</div>
                     </div>
                     <div class="estrellas">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                     </div>
                     <div class="testimonio-texto">
                         Un gran descubrimiento!! Cristo trabaja y trata el cabello con mucho mimo, y de forma IMPECABLE. El trato es muy bueno por parte de los dos, te hacen sentir muy agusto. Precios muy ajustados para la calidad que ofrecen. Sin duda para repetir.
@@ -938,7 +2448,6 @@
                     <div class="direccion">
                         <p><i class="fas fa-map-pin"></i> <strong>Carrer Gran de Sant Andreu, 62</strong></p>
                         <p><i class="fas fa-city"></i> 08030, Barcelona</p>
-                        <!-- NÚMERO DE TELEFONE ATUALIZADO -->
                         <p><i class="fas fa-phone"></i> <a href="tel:+34605886004">+34 605 886 004</a></p>
                         <p><i class="fas fa-envelope"></i> <a href="mailto:info@cisealuxgalants.com">info@cisealuxgalants.com</a></p>
                     </div>
@@ -962,23 +2471,16 @@
                         <p><small>* Día 1 de mayo cerrado</small></p>
                     </div>
 
-                    <!-- Botão do WhatsApp ATUALIZADO -->
                     <a href="https://wa.me/34605886004" class="btn-whatsapp-directo" target="_blank">
                         <i class="fab fa-whatsapp"></i> Agendar por WhatsApp
                     </a>
                 </div>
                 
                 <div class="mapa-container">
-                    <!-- MAPA DO GOOGLE MAPS ATUALIZADO -->
                     <div class="mapa-real">
                         <iframe 
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2992.548108910846!2d2.1739119157394156!3d41.4039017792622!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4a3237b47b8a5%3A0x6c8b5b5e5e5e5e5e!2sCarrer%20Gran%20de%20Sant%20Andreu%2C%2062%2C%2008030%20Barcelona%2C%20Espa%C3%B1a!5e0!3m2!1ses!2ses!4v1641234567890!5m2!1ses!2ses" 
-                            width="100%" 
-                            height="100%" 
-                            style="border:0;" 
-                            allowfullscreen="" 
-                            loading="lazy" 
-                            referrerpolicy="no-referrer-when-downgrade">
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
                         </iframe>
                     </div>
                 </div>
@@ -1048,7 +2550,7 @@
                         </div>
                         <div class="form-group">
                             <label for="estilista"><i class="fas fa-user-tie"></i> Estilista Preferido (opcional)</label>
-                            <select id="estilista" name="estilista" style="background-color: white; color: #333;">
+                            <select id="estilista" name="estilista">
                                 <option value="" selected>Cualquier estilista</option>
                                 <option value="cristo">Cristo Vieira (Dueño)</option>
                                 <option value="fernando">Fernando Galvão</option>
@@ -1095,15 +2597,11 @@
                         <p class="testimonio-autor">- María G., cliente habitual</p>
                     </div>
 
-                    <!-- Botão para agendar via Booksy -->
                     <a href="https://booksy.com/es-es/136783_ciseaux-galants_peluqueria_48863_barcelona?do=invite&_branch_match_id=1544150758857710068&utm_medium=merchant_customer_invite&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXT07J0UvKz88urtRLzs%2FVL8ovD3Q0qwxKjUyyrytKTUstKsrMS49PAooXpxbZOmcU5eemAgAbsAxXPAAAAA%3D%3D" 
-                       class="btn-booksy-directo" 
-                       target="_blank" 
-                       rel="noopener noreferrer">
+                       class="btn-booksy-directo" target="_blank" rel="noopener noreferrer">
                        <i class="fas fa-calendar-alt"></i> Reservar en Booksy
                     </a>
                     
-                    <!-- Botão do WhatsApp -->
                     <a href="https://wa.me/34605886004" class="btn-whatsapp-directo" target="_blank">
                         <i class="fab fa-whatsapp"></i> Agendar por WhatsApp
                     </a>
@@ -1150,9 +2648,7 @@
                     <h2><i class="fas fa-scissors"></i> Cisealux <span>Galants</span></h2>
                     <p>Salón Unissex de Estilo y Elegancia en Barcelona</p>
                     <div class="footer-social">
-                        <!-- INSTAGRAM ATUALIZADO - FACEBOOK E TIKTOK REMOVIDOS -->
                         <a href="https://www.instagram.com/ciseauxbycristo/" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <!-- LINK DO WHATSAPP NO FOOTER ATUALIZADO -->
                         <a href="https://wa.me/34605886004" target="_blank"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
@@ -1170,7 +2666,6 @@
                 <div class="footer-contacto">
                     <h3>Contacto</h3>
                     <p><i class="fas fa-map-marker-alt"></i> Carrer Gran de Sant Andreu, 62, 08030, Barcelona</p>
-                    <!-- NÚMERO DE TELEFONE ATUALIZADO -->
                     <p><i class="fas fa-phone"></i> <a href="tel:+34605886004">+34 605 886 004</a></p>
                     <p><i class="fas fa-envelope"></i> <a href="mailto:info@cisealuxgalants.com">info@cisealuxgalants.com</a></p>
                     <p><i class="fas fa-clock"></i> Lunes a Sábado: 09:30-14:00</p>
